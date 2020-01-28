@@ -7,6 +7,7 @@ import { resetContext } from "actions/context";
 import { media, color } from "styles/utils";
 
 import SiteTitle from "components/SiteTitle";
+import LanguageSelect from "components/LanguageSelect";
 
 import { Link } from "react-router-dom";
 
@@ -269,6 +270,14 @@ const Middle = styled.div`
     width: 210px;
     text-transform: uppercase;
   }
+  .language-padding {
+    margin-bottom:2.5rem
+  }
+  @media screen and ( max-height: 1000px ) {
+    .language-padding {
+      margin-bottom:4.5rem
+    }
+  }
 `;
 
 class Scene extends Component {
@@ -325,6 +334,9 @@ class Scene extends Component {
               defaultMessage="Indígenas Uru-Eu-Wau-Wau sofrem ataques constantes de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território estão evidentes"
             />
           </p>
+          <div className='language-padding'>
+            <LanguageSelect />
+          </div>
             <div>
               {lastPath ? (
                 <div>

@@ -1,3 +1,5 @@
 export default {
-  'pt': require('./pt')
+  'en': require('./en'),
+  'pt': require('./pt'),
+  'es': require('./es')
 }

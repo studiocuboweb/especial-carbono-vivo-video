@@ -4,6 +4,8 @@ import { FormattedMessage } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { media } from 'styles/utils';
+import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
+import LanguageSelect from "components/LanguageSelect";
 
 const Wrapper = styled.nav`
   font-family: 'Merriweather', serif;
@@ -122,6 +124,11 @@ class ArticleNav extends Component {
               <ProgressBar path="/story" />
             </NavLink>
           </li>
+          {(isMobile && !this.state.isLandscape) && 
+            <li style={{'marginLeft':'2rem'}}>
+              <LanguageSelect />
+            </li>
+          }
         </ol>
       </Wrapper>
     )

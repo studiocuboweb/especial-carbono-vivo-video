@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { media, color } from 'styles/utils';
 import { NavLink, Link } from 'react-router-dom';
+import {BrowserView,MobileView,isBrowser,isMobile} from "react-device-detect";
+import LanguageSelect from "components/LanguageSelect";
 
 import SiteTitle from './SiteTitle';
 
@@ -108,6 +110,9 @@ class Header extends Component {
           <NavLink to="/share" className="color-white" title="Compartilhe">
             <span className="fa fa-share-alt"></span>
           </NavLink>
+          {(isBrowser || (isMobile && this.state.isLandscape)) && 
+              <LanguageSelect />
+          }
         </nav>
       </div>
     </Top>

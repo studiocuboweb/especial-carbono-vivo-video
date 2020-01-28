@@ -35,9 +35,11 @@ import configureStore from "store";
 import Application from "app";
 
 import pt from "react-intl/locale-data/pt";
+import es from "react-intl/locale-data/es";
+import en from "react-intl/locale-data/en";
 
-addLocaleData([...pt]);
-window.locales = ["pt"];
+addLocaleData([...pt, ...es, ...en]);
+window.locales = ["pt","es","en"];
 
 import localeData from "locales";
 
