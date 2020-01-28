@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/studiocuboweb/infoamazonia-por-dentro-da-floresta#readme",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "calvinclaus-rc-slider": "7.3.0",
     "es6-set": "^0.1.5",
     "font-awesome": "^4.7.0",
