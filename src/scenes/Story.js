@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { resetContext } from "actions/context";
 import { media, color } from "styles/utils";
+import { injectIntl, intlShape } from "react-intl";
 
 import VideoEndContent from 'components/containers/VideoEndContent';
 import Header from 'components/Header';
@@ -402,6 +403,14 @@ class Scene extends Component {
     const { chapter, ended, playing, elapsedTime } = this.state;
     const { width } = this.state;
     const isMobile = width <= 470;
+    var youtubeId = 'MNPjmqGQkLc';
+    if (this.props.intl.locale.search('es') > -1) {
+      //espanhol
+      youtubeId = 'P1RmCycbPHM';
+    } else if (this.props.intl.locale.search('pt') > -1) {
+      //portugues
+      youtubeId = 'PIFcHf99cb8';
+    }
     return (
       <Wrapper className={"scene landing"}>
         <Header />
@@ -416,7 +425,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ id: "47ci04xmad0" }}
+                    data={{ id: youtubeId }}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -566,4 +575,6 @@ const mapDispatchToProps = {
   resetContext
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Scene);
+//export default connect(mapStateToProps, mapDispatchToProps)(Scene);
+//export default injectIntl(withRouter(Intro));
+export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(Scene));
