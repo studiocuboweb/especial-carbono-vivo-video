@@ -14,6 +14,9 @@ import YouTubeVideo from "components/YouTube";
 
 import Rcslider from "rc-slider";
 
+import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
+import LanguageSelect from "components/LanguageSelect";
+
 const Wrapper = styled.section`
   position: fixed;
   z-index: 9999;
@@ -241,6 +244,9 @@ const Middle = styled.div`
     width: 210px;
     text-transform: uppercase;
   }
+  #language_select {
+
+  }
 `;
 const videoChapters = [
   {
@@ -404,17 +410,23 @@ class Scene extends Component {
     const { width } = this.state;
     const isMobile = width <= 470;
     var youtubeId = 'MNPjmqGQkLc';
+    var ccLangPref = 'en';
+    var hl = 'en';
     if (this.props.intl.locale.search('es') > -1) {
       //espanhol
       youtubeId = 'P1RmCycbPHM';
+      ccLangPref = 'es';
+      hl = 'es';
     } else if (this.props.intl.locale.search('pt') > -1) {
       //portugues
       youtubeId = 'PIFcHf99cb8';
+      ccLangPref = 'pt';
+      hl = 'pt';
     }
     return (
       <Wrapper className={"scene landing"}>
         <Header />
-        <Overlay onMouseMove={this.onMouseMoveHandler.bind(this)} onClick={() => { this._toggleVideo() }} onTouchEnd={this.onTouchEndHandler.bind(this)} style={this.state.cursor} />
+        <Overlay onMouseMove={this.onMouseMoveHandler.bind(this)} onClick={() => { this._toggleVideo() }} onTouchEnd={this.onTouchEndHandler.bind(this)} style={this.state.cursor,{zIndex:1}} />
         {
           !isMobile &&
             <div className={"video-content "} >
@@ -425,7 +437,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ id: youtubeId }}
+                    data={{ id: 'UwsrzCVZAb8', cc_lang_pref: ccLangPref, hl: hl}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -460,7 +472,7 @@ class Scene extends Component {
           {
             !ended && this._video &&
             <VideoControlls>
-              <div style={{width:'75%',margin:'0',float:'left',display:'block'}}>
+              <div style={{width:'50%',margin:'0',float:'left',display:'block'}}>
               {
                 !playing &&
                 <Link
@@ -486,12 +498,15 @@ class Scene extends Component {
                   <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
                 </Link>
               </div>
+              <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
+                <LanguageSelect id="language_select" />
+              </div>
               <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'right'}}>
-                <Link
-                  to="#"
-                  onClick={() => this._fullScreenVideo()}>
-                  <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
-                </Link>
+                    <Link
+                      to="#"
+                      onClick={() => this._fullScreenVideo()}>
+                      <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
+                    </Link>
               </div>
             </VideoControlls>
           }

@@ -221,7 +221,11 @@ class YouTubeVideo extends Component {
                 rel:0,
                 controls:0,
                 modestbranding: 1,
-                wmode:'opaque'
+                wmode:'opaque',
+                cc_load_policy: 1,
+                cc_lang_pref: data.ccLangPref,
+                hl: data.hl,
+                persist_hl:1
               },
             }}
             onPlay={this._saveVideoState}

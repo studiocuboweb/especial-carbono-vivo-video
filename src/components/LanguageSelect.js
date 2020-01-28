@@ -124,6 +124,7 @@ const WrapperStory = styled.section`
   }
 
   .select-selected {
+    font-size:0.4em;
     background: #fff;
   }
 
@@ -156,6 +157,7 @@ const WrapperStory = styled.section`
 
   /* Style items (options): */
   .select-items {
+    z-index: 9999999999999999999999999999;
     font-family: "Cinzel";
     font-size: 0.5em;
     letter-spacing: 0.1rem;
@@ -172,7 +174,7 @@ const WrapperStory = styled.section`
 
     position: absolute;
   
-    top: 100%;
+    bottom: 100%;
     left: 0;
     right: 0;
     z-index: 99;
