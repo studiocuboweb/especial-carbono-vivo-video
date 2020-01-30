@@ -529,6 +529,12 @@ class Scene extends Component {
   }
 
   LanguageSelectVideoVideo(currentLanguage,parentScope) {
+    // player.loadModule("captions");  //Works for html5 ignored by AS3
+    // player.loadModule("cc");  //Works for AS3 ignored by html5
+    // player.unloadModule("captions");  //Works for html5 ignored by AS3
+    // player.unloadModule("cc");  //Works for AS3 ignored by html5
+    // parentScope._video.node.setOption("captions", "track", {"languageCode": currentLanguage});  //Works for html5 ignored by AS3
+    // parentScope._video.node.setOption("cc", "track", {"languageCode": currentLanguage});  //Works for AS3 ignored by html5
     this.setState({legendVideo: currentLanguage})
   }
   _fullScreenVideo = () => {
