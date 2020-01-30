@@ -291,6 +291,8 @@ class Scene extends Component {
     menuClass: '',
     displayChapterMenu: {display:'none'},
     arrowButtonClass: 'fa fa-arrow-up',
+    legendVideo: 'en',
+    youtubeId: ''
   }
 
   toogleMenu = () => {
@@ -355,6 +357,22 @@ class Scene extends Component {
 
   componentDidMount = () => {
     //document.getElementById('video-player').scrollTo(0,10000);
+
+    var youtubeId = 'MNPjmqGQkLc';
+    var ccLangPref = 'en';
+    var hl = 'en';
+    if (this.props.intl.locale.search('es') > -1) {
+      //espanhol
+      youtubeId = 'P1RmCycbPHM';
+      ccLangPref = 'es';
+      hl = 'es';
+    } else if (this.props.intl.locale.search('pt') > -1) {
+      //portugues
+      youtubeId = 'PIFcHf99cb8';
+      ccLangPref = 'pt';
+      hl = 'pt';
+    }
+    this.setState({legendVideo: hl, youtubeId: youtubeId})
     if (typeof window !== 'undefined' ) {
       this.setState({ width: window.innerWidth })
       window.addEventListener('resize', this.handleWindowSizeChange)
@@ -410,20 +428,7 @@ class Scene extends Component {
     const { chapter, ended, playing, elapsedTime } = this.state;
     const { width } = this.state;
     const isMobile = width <= 470;
-    var youtubeId = 'MNPjmqGQkLc';
-    var ccLangPref = 'en';
-    var hl = 'en';
-    if (this.props.intl.locale.search('es') > -1) {
-      //espanhol
-      youtubeId = 'P1RmCycbPHM';
-      ccLangPref = 'es';
-      hl = 'es';
-    } else if (this.props.intl.locale.search('pt') > -1) {
-      //portugues
-      youtubeId = 'PIFcHf99cb8';
-      ccLangPref = 'pt';
-      hl = 'pt';
-    }
+
     return (
       <Wrapper className={"scene landing"}>
         <Header />
@@ -438,7 +443,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ id: 'UwsrzCVZAb8', cc_lang_pref: ccLangPref, hl: hl}}
+                    data={{ id: 'UwsrzCVZAb8', cc_lang_pref: this.state.legendVideo, hl: this.state.legendVideo}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -524,8 +529,7 @@ class Scene extends Component {
   }
 
   LanguageSelectVideoVideo(currentLanguage,parentScope) {
-    console.log("LanguageSelectVideoVideo");
-    console.log(parentScope._video.node);
+    this.setState({legendVideo: currentLanguage})
   }
   _fullScreenVideo = () => {
     var elem = document.getElementById("video-player");
