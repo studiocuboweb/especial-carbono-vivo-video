@@ -118,6 +118,7 @@ class LanguageSelectVideo extends Component {
     constructor(){
       super()
       this.handleChange = this.handleChange.bind(this);
+      this.teste = this.teste.bind(this);
       this.closeAllSelect = this.closeAllSelect.bind(this);
       this.count = 0;
 
@@ -267,7 +268,9 @@ class LanguageSelectVideo extends Component {
         }
       }
     }
-
+    teste() {
+      console.log('teste')
+    }
     handleChange(ev) {
        //console.log('handleChange')
        //console.log(ev.target.textContent)
@@ -285,6 +288,8 @@ class LanguageSelectVideo extends Component {
               })
               //console.log(this.state.language)
         }
+
+        this.props.onChange(choosedLanguage,this.props.parentScope);
     }
 
     render () {
@@ -292,7 +297,7 @@ class LanguageSelectVideo extends Component {
         return (
       <WrapperStory>
         <div className='custom-select' style={{'width':'150px'}}>
-          <select onChange={this.handleChange} value={this.state.language}>
+          <select onChange={() => onChange()} value={this.state.language}>
               <option value=''>Select a language:</option>
               {languages.map((value, index) => {
                   var _selected=false;

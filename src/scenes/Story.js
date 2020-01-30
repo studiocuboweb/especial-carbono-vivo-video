@@ -15,7 +15,7 @@ import YouTubeVideo from "components/YouTube";
 import Rcslider from "rc-slider";
 
 import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
-import LanguageSelect from "components/LanguageSelect";
+import LanguageSelectVideo from "components/LanguageSelectVideo";
 
 const Wrapper = styled.section`
   position: fixed;
@@ -278,6 +278,7 @@ const videoChapters = [
 class Scene extends Component {
   constructor(props) {
     super(props);
+    this.LanguageSelectVideoVideo = this.LanguageSelectVideoVideo.bind(this)
   }
 
   state = {
@@ -499,7 +500,7 @@ class Scene extends Component {
                 </Link>
               </div>
               <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
-                <LanguageSelect id="language_select" />
+                <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
               </div>
               <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'right'}}>
                     <Link
@@ -522,6 +523,10 @@ class Scene extends Component {
     );
   }
 
+  LanguageSelectVideoVideo(currentLanguage,parentScope) {
+    console.log("LanguageSelectVideoVideo");
+    console.log(parentScope._video.node);
+  }
   _fullScreenVideo = () => {
     var elem = document.getElementById("video-player");
     if (elem.requestFullscreen) {
