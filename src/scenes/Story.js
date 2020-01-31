@@ -16,6 +16,7 @@ import Rcslider from "rc-slider";
 
 import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
 import LanguageSelectVideo from "components/LanguageSelectVideo";
+import { FormattedMessage } from "react-intl";
 
 const Wrapper = styled.section`
   position: fixed;
@@ -515,11 +516,19 @@ class Scene extends Component {
                   <Link
                     to="#"
                     onClick={() => this._openChaptersMenu()} className="text-chapter">
-                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
+                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> 
+                    <FormattedMessage
+                      id="video.chaptersLabel"
+                      defaultMessage="chapters"
+                    />
+                    <span className={this.state.arrowButtonClass}></span>
                   </Link>
                 </div>
                 <div className="subtitle" style={{margin:'0',paddingLeft:'10px',float:'left',display:'block',textAlign:'right'}}>
-                  Subtitle:
+                <FormattedMessage
+                  id="video.subtitleLabel"
+                  defaultMessage="subtitle"
+                />:
                 </div>
                 <div style={{margin:'0',float:'left',display:'block',textAlign:'center'}}>
                     <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
