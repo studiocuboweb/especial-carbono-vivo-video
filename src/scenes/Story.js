@@ -113,9 +113,16 @@ const Overlay = styled.div`
 `;
 
 const VideoControlls = styled.div`
-  div {
-    padding:10px 0px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+  .subtitle {
+    font-family: 'Merriweather',serif;
+    font-weight: 600;
+    font-size: 0.5em;
+    -webkit-letter-spacing: 0.1rem;
+    -moz-letter-spacing: 0.1rem;
+    -ms-letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding-top:10px;
   }
   a {
     display:inline !important;
@@ -168,6 +175,11 @@ const Spacer = styled.div`
 
 const Middle = styled.div`
   width: 100%;
+  .video-menu-container {
+    padding:0px 0px;
+    height:50px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
   .animate {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -443,7 +455,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ id: 'UwsrzCVZAb8', cc_lang_pref: this.state.legendVideo, hl: this.state.legendVideo}}
+                    data={{ id: '', cc_lang_pref: this.state.legendVideo, hl: this.state.legendVideo}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -465,6 +477,7 @@ class Scene extends Component {
         {ended && !playing && <VideoEndContent data="" />}
         <Middle onTouchEnd={this.onTouchEndHandler.bind(this)} onMouseMove={this.onMouseMoveHandler.bind(this)} className="middle video-menu"  style={{ zIndex: 999 }}>
           <div className={'animate ' + this.state.menuClass}>
+            <div className="video-menu-container">
           {
             !ended && this._video &&
               <Rcslider style={{ zIndex: 9999 }}
@@ -478,7 +491,7 @@ class Scene extends Component {
           {
             !ended && this._video &&
             <VideoControlls>
-              <div style={{width:'50%',margin:'0',float:'left',display:'block'}}>
+              <div style={{width:'18%',margin:'0',float:'left',display:'block'}}>
               {
                 !playing &&
                 <Link
@@ -504,8 +517,11 @@ class Scene extends Component {
                   <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
                 </Link>
               </div>
-              <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
-                <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
+              <div className="subtitle" style={{'width':'5%',display:'block',float:'left',textAlign:'right'}}>
+                Subtitle:
+              </div>
+              <div style={{width:'52%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
+                  <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
               </div>
               <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'right'}}>
                     <Link
@@ -522,6 +538,7 @@ class Scene extends Component {
               {this.renderMenu()}
             </div>
           }
+            </div>
           </div>
         </Middle>
       </Wrapper>
