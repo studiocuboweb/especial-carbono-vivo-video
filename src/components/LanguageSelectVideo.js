@@ -8,19 +8,19 @@ const WrapperStory = styled.section`
 
   ${media.phone`
     position: absolute;
-    bottom:10px;
+    bottom:4px;
     z-index: 99999;
   `}
   
   ${media.phablet`
     position: absolute;
-    bottom:10px;
+    bottom:4px;
     z-index: 99999;
   `}
 
   ${media.tablet`
     position: absolute;
-    bottom:10px;
+    bottom:4px;
     z-index: 99999;
   `}
 

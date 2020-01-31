@@ -491,44 +491,48 @@ class Scene extends Component {
           {
             !ended && this._video &&
             <VideoControlls>
-              <div style={{width:'18%',margin:'0',float:'left',display:'block'}}>
-              {
-                !playing &&
-                <Link
-                  to="#"
-                  onClick={() => this._resumeVideo()}>
-                  <span className="fa fa-play"></span>
-                </Link>
-              }
-              {
-                playing &&
-                <Link
-                  to="#"
-                  onClick={() => this._pauseVideo()}>
-                  <span className="fa fa-pause"></span>
-                </Link>
-              }
-                <div className="video-time">
-                  {this._video.formatTime(Math.round(this._video.state.position))} / {this._video.formatTime(this._video.state.duration)}
+              <div style={{margin:'0',float:'left',display:'block',width:'75%'}}>
+                <div style={{margin:'0',float:'left',display:'block'}}>
+                {
+                  !playing &&
+                  <Link
+                    to="#"
+                    onClick={() => this._resumeVideo()}>
+                    <span className="fa fa-play"></span>
+                  </Link>
+                }
+                {
+                  playing &&
+                  <Link
+                    to="#"
+                    onClick={() => this._pauseVideo()}>
+                    <span className="fa fa-pause"></span>
+                  </Link>
+                }
+                  <div className="video-time">
+                    {this._video.formatTime(Math.round(this._video.state.position))} / {this._video.formatTime(this._video.state.duration)}
+                  </div>
+                  <Link
+                    to="#"
+                    onClick={() => this._openChaptersMenu()} className="text-chapter">
+                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
+                  </Link>
                 </div>
-                <Link
-                  to="#"
-                  onClick={() => this._openChaptersMenu()} className="text-chapter">
-                  <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
-                </Link>
+                <div className="subtitle" style={{margin:'0',paddingLeft:'10px',float:'left',display:'block',textAlign:'right'}}>
+                  Subtitle:
+                </div>
+                <div style={{margin:'0',float:'left',display:'block',textAlign:'center'}}>
+                    <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
+                </div>
               </div>
-              <div className="subtitle" style={{'width':'5%',display:'block',float:'left',textAlign:'right'}}>
-                Subtitle:
-              </div>
-              <div style={{width:'52%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
-                  <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
-              </div>
-              <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'right'}}>
-                    <Link
-                      to="#"
-                      onClick={() => this._fullScreenVideo()}>
-                      <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
-                    </Link>
+              <div style={{display:'block',float:'left',margin:'0',width:'25%'}}>
+                <div style={{textAlign:'right'}}>
+                      <Link
+                        to="#"
+                        onClick={() => this._fullScreenVideo()}>
+                        <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
+                      </Link>
+                </div>
               </div>
             </VideoControlls>
           }
