@@ -37,6 +37,8 @@ const WrapperStory = styled.section`
   .custom-select {
     /* The container must be positioned relative: */
     position: relative;
+    text-align:left;
+    width:130px;
   }
 
   .custom-select select {
@@ -52,15 +54,15 @@ const WrapperStory = styled.section`
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     font-weight: 600;
-    background: #fff;
+    // background: #fff;
   }
 
   /* Style the arrow inside the select element: */
   .select-selected:after {
     position: absolute;
     content: "";
-    top: 14px;
-    right: 10px;
+    top: 12px;
+    right: 20px;
     width: 0;
     height: 0;
     border: 6px solid transparent;
@@ -70,7 +72,8 @@ const WrapperStory = styled.section`
   /* Point the arrow upwards when the select box is open (active): */
   .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
-    top: 7px;
+    top: 5px;
+    right: 20px;
   }
 
   /* style the items (options), including the selected item: */
@@ -101,21 +104,20 @@ const WrapperStory = styled.section`
     letter-spacing: 0.1rem;
     display: inline-block;
     color: #ffffff;
-    background: #fff;
-    border: 1px solid #fff;
+    // background: #fff;
+    // border: 1px solid #fff;
     text-align: center;
     margin: -1px -1px 0 0;
     padding: 0.75rem 1rem;
     font-weight: 600;
     width: 116px;
     text-transform: uppercase;
-
     position: absolute;
-  
     bottom: 100%;
     left: 0;
     right: 0;
     z-index: 99;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   /* Hide the items when the select box is closed: */
@@ -314,7 +316,7 @@ class LanguageSelectVideo extends Component {
         const { onChange } = this.props;
         return (
       <WrapperStory>
-        <div className='custom-select' style={{'width':'150px'}}>
+        <div className='custom-select'>
           <select onChange={() => onChange()} value={this.state.language}>
               <option value=''>Select a language:</option>
               {languages.map((value, index) => {
