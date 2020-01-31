@@ -297,9 +297,9 @@ class LanguageSelectVideo extends Component {
        var choosedLanguage = 'en';
         if (ev.target.textContent != '') {
             if (ev.target.textContent == "Português") {
-              choosedLanguage = 'pt';
+              choosedLanguage = 'pt-BR';
             } else if (ev.target.textContent == "Español") {
-              choosedLanguage = 'es';
+              choosedLanguage = 'es-419';
             }
             console.log('choosedLanguage')
             console.log(choosedLanguage)
