@@ -178,7 +178,7 @@ const Middle = styled.div`
   width: 100%;
   .video-menu-container {
     padding:0px 0px;
-    height:50px;
+    min-height:50px;
     background-color: rgba(0, 0, 0, 0.5) !important;
   }
   .animate {

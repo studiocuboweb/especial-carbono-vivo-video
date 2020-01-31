@@ -7,20 +7,20 @@ import { media } from 'styles/utils';
 const WrapperStory = styled.section`
 
   ${media.phone`
-    position: absolute;
-    bottom:4px;
+    // position: absolute;
+    // bottom:4px;
     z-index: 99999;
   `}
   
   ${media.phablet`
-    position: absolute;
-    bottom:4px;
+    // position: absolute;
+    // bottom:4px;
     z-index: 99999;
   `}
 
   ${media.tablet`
-    position: absolute;
-    bottom:4px;
+    // position: absolute;
+    // bottom:4px;
     z-index: 99999;
   `}
 
@@ -117,7 +117,7 @@ const WrapperStory = styled.section`
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   /* Hide the items when the select box is closed: */
