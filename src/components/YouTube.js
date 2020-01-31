@@ -211,7 +211,7 @@ class YouTubeVideo extends Component {
       <Wrapper onClick={this._handleClick} preview={preview}>
         <div className="video-container" id="player-yt">
           <YouTube id="video-player"
-            videoId={data.id}
+            videoId={data.youtubeId}
             opts={{
               height: '0',
               width: '0',
@@ -223,8 +223,8 @@ class YouTubeVideo extends Component {
                 modestbranding: 1,
                 wmode:'opaque',
                 cc_load_policy: 1,
-                cc_lang_pref: data.ccLangPref,
-                hl: data.hl,
+                cc_lang_pref: data.subtitleLanguage,
+                hl: data.subtitleLanguage,
                 persist_hl:1
               },
             }}

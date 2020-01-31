@@ -30,5 +30,7 @@
   "head.title": "Terra em Disputa EN",
   "share.title": "Compartilhe este vídeo",
   "story.continueReading": "Continuar assistindo",
-  "general.backToHome": "voltar para a capa"
+  "general.backToHome": "voltar para a capa",
+  "video.subtitleLabel": "Subtitle",
+  "video.chaptersLabel": "Chapters"
 }

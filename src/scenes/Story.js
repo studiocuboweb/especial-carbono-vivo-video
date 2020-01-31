@@ -15,7 +15,8 @@ import YouTubeVideo from "components/YouTube";
 import Rcslider from "rc-slider";
 
 import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
-import LanguageSelect from "components/LanguageSelect";
+import LanguageSelectVideo from "components/LanguageSelectVideo";
+import { FormattedMessage } from "react-intl";
 
 const Wrapper = styled.section`
   position: fixed;
@@ -113,9 +114,16 @@ const Overlay = styled.div`
 `;
 
 const VideoControlls = styled.div`
-  div {
-    padding:10px 0px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+  .subtitle {
+    font-family: 'Merriweather',serif;
+    font-weight: 600;
+    font-size: 0.5em;
+    -webkit-letter-spacing: 0.1rem;
+    -moz-letter-spacing: 0.1rem;
+    -ms-letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding-top:10px;
   }
   a {
     display:inline !important;
@@ -168,6 +176,11 @@ const Spacer = styled.div`
 
 const Middle = styled.div`
   width: 100%;
+  .video-menu-container {
+    padding:0px 0px;
+    min-height:50px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
   .animate {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -278,6 +291,7 @@ const videoChapters = [
 class Scene extends Component {
   constructor(props) {
     super(props);
+    this.LanguageSelectVideoVideo = this.LanguageSelectVideoVideo.bind(this)
   }
 
   state = {
@@ -409,19 +423,16 @@ class Scene extends Component {
     const { chapter, ended, playing, elapsedTime } = this.state;
     const { width } = this.state;
     const isMobile = width <= 470;
-    var youtubeId = 'MNPjmqGQkLc';
-    var ccLangPref = 'en';
-    var hl = 'en';
+    //var youtubeId = 'MNPjmqGQkLc';
+    var language = 'en';
     if (this.props.intl.locale.search('es') > -1) {
       //espanhol
-      youtubeId = 'P1RmCycbPHM';
-      ccLangPref = 'es';
-      hl = 'es';
+      //youtubeId = 'P1RmCycbPHM';
+      language = 'es-419';
     } else if (this.props.intl.locale.search('pt') > -1) {
       //portugues
-      youtubeId = 'PIFcHf99cb8';
-      ccLangPref = 'pt';
-      hl = 'pt';
+      //youtubeId = 'PIFcHf99cb8';
+      language = 'pt-BR';
     }
     return (
       <Wrapper className={"scene landing"}>
@@ -437,7 +448,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ id: 'UwsrzCVZAb8', cc_lang_pref: ccLangPref, hl: hl}}
+                    data={{ youtubeId: 'UwsrzCVZAb8', subtitleLanguage: language}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -459,6 +470,7 @@ class Scene extends Component {
         {ended && !playing && <VideoEndContent data="" />}
         <Middle onTouchEnd={this.onTouchEndHandler.bind(this)} onMouseMove={this.onMouseMoveHandler.bind(this)} className="middle video-menu"  style={{ zIndex: 999 }}>
           <div className={'animate ' + this.state.menuClass}>
+            <div className="video-menu-container">
           {
             !ended && this._video &&
               <Rcslider style={{ zIndex: 9999 }}
@@ -472,41 +484,56 @@ class Scene extends Component {
           {
             !ended && this._video &&
             <VideoControlls>
-              <div style={{width:'50%',margin:'0',float:'left',display:'block'}}>
-              {
-                !playing &&
-                <Link
-                  to="#"
-                  onClick={() => this._resumeVideo()}>
-                  <span className="fa fa-play"></span>
-                </Link>
-              }
-              {
-                playing &&
-                <Link
-                  to="#"
-                  onClick={() => this._pauseVideo()}>
-                  <span className="fa fa-pause"></span>
-                </Link>
-              }
-                <div className="video-time">
-                  {this._video.formatTime(Math.round(this._video.state.position))} / {this._video.formatTime(this._video.state.duration)}
+              <div style={{margin:'0',float:'left',display:'block',width:'75%'}}>
+                <div style={{margin:'0',float:'left',display:'block'}}>
+                {
+                  !playing &&
+                  <Link
+                    to="#"
+                    onClick={() => this._resumeVideo()}>
+                    <span className="fa fa-play"></span>
+                  </Link>
+                }
+                {
+                  playing &&
+                  <Link
+                    to="#"
+                    onClick={() => this._pauseVideo()}>
+                    <span className="fa fa-pause"></span>
+                  </Link>
+                }
+                  <div className="video-time">
+                    {this._video.formatTime(Math.round(this._video.state.position))} / {this._video.formatTime(this._video.state.duration)}
+                  </div>
+                  <Link
+                    to="#"
+                    onClick={() => this._openChaptersMenu()} className="text-chapter">
+                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> 
+                    <FormattedMessage
+                      id="video.chaptersLabel"
+                      defaultMessage="chapters"
+                    />
+                    <span className={this.state.arrowButtonClass}></span>
+                  </Link>
                 </div>
-                <Link
-                  to="#"
-                  onClick={() => this._openChaptersMenu()} className="text-chapter">
-                  <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> Capítulos <span className={this.state.arrowButtonClass}></span>
-                </Link>
+                <div className="subtitle" style={{margin:'0',paddingLeft:'10px',float:'left',display:'block',textAlign:'right'}}>
+                <FormattedMessage
+                  id="video.subtitleLabel"
+                  defaultMessage="subtitle"
+                />:
+                </div>
+                <div style={{margin:'0',float:'left',display:'block',textAlign:'center'}}>
+                    <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
+                </div>
               </div>
-              <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'center'}}>
-                <LanguageSelect id="language_select" />
-              </div>
-              <div style={{width:'25%',display:'block',float:'left',margin:'0',textAlign:'right'}}>
-                    <Link
-                      to="#"
-                      onClick={() => this._fullScreenVideo()}>
-                      <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
-                    </Link>
+              <div style={{display:'block',float:'left',margin:'0',width:'25%'}}>
+                <div style={{textAlign:'right'}}>
+                      <Link
+                        to="#"
+                        onClick={() => this._fullScreenVideo()}>
+                        <span><img src={require("images/fullscreen.svg")} style={{width:'20px'}}/></span>
+                      </Link>
+                </div>
               </div>
             </VideoControlls>
           }
@@ -516,12 +543,28 @@ class Scene extends Component {
               {this.renderMenu()}
             </div>
           }
+            </div>
           </div>
         </Middle>
       </Wrapper>
     );
   }
 
+  LanguageSelectVideoVideo(currentLanguage,parentScope) {
+    // console.log(parentScope._video.node.getOption('captions', 'tracklist'));
+    // parentScope._video.node.unloadModule("captions");  //Works for html5 ignored by AS3
+    // parentScope._video.node.unloadModule("cc");  //Works for AS3 ignored by html5
+    parentScope._video.node.setOption("captions", "track", {"languageCode": currentLanguage})  //Works for html5 ignored by AS3
+    parentScope._video.node.setOption("cc", "track", {"languageCode": currentLanguage}) //Works for AS3 ignored by html5
+    // parentScope._video.node.loadModule("captions");  //Works for html5 ignored by AS3
+    // parentScope._video.node.loadModule("cc");  //Works for AS3 ignored by html5
+
+    
+    // console.log('parentScope._video.state.position')
+    // console.log(parentScope._video.state.position)
+    // parentScope._video.setPosition(parentScope._video.state.position)
+    // parentScope.setState({legendVideo: currentLanguage})
+  }
   _fullScreenVideo = () => {
     var elem = document.getElementById("video-player");
     if (elem.requestFullscreen) {
