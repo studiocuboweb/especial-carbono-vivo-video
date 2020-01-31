@@ -44,7 +44,14 @@ const WrapperStory = styled.section`
   }
 
   .select-selected {
-    font-size:0.4em;
+    font-family: 'Merriweather',serif;
+    font-size: 0.5em;
+    -webkit-letter-spacing: 0.1rem;
+    -moz-letter-spacing: 0.1rem;
+    -ms-letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
     background: #fff;
   }
 
@@ -68,7 +75,14 @@ const WrapperStory = styled.section`
 
   /* style the items (options), including the selected item: */
   .select-items div,.select-selected {
-    color: #999;
+    color: #ffffff;
+    font-family: 'Merriweather',serif;
+    font-weight: 600;
+    font-size: 0.5em;
+    -webkit-letter-spacing: 0.1rem;
+    -moz-letter-spacing: 0.1rem;
+    -ms-letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -78,11 +92,15 @@ const WrapperStory = styled.section`
   /* Style items (options): */
   .select-items {
     z-index: 9999999999999999999999999999;
-    font-family: "Cinzel";
+    font-family: 'Merriweather',serif;
+    font-weight: 600;
     font-size: 0.5em;
+    -webkit-letter-spacing: 0.1rem;
+    -moz-letter-spacing: 0.1rem;
+    -ms-letter-spacing: 0.1rem;
     letter-spacing: 0.1rem;
     display: inline-block;
-    color: #999;
+    color: #ffffff;
     background: #fff;
     border: 1px solid #fff;
     text-align: center;
