@@ -313,16 +313,10 @@ class Scene extends Component {
             <img src={require("images/partners/infoamazonia.png")} />
           </div>
           <SiteTitle />
-          <h2>
-            <FormattedMessage
-              id="general.author"
-              defaultMessage="por Fábio Nascimento e Gustavo Faleiros"
-            />
-          </h2>
           <h3>
             <FormattedMessage
               id="general.publishDate"
-              defaultMessage="23 de abril de 2019"
+              defaultMessage="03 February 2020"
             />
           </h3>
         </Top>
@@ -331,7 +325,7 @@ class Scene extends Component {
           <p className="description">
             <FormattedMessage
               id="general.tagline"
-              defaultMessage="Indígenas Uru-Eu-Wau-Wau sofrem ataques constantes de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território estão evidentes"
+              defaultMessage="Indigenous territories and protected areas own 58% of the carbon in the Amazon. But researchers warn degradation advances"
             />
           </p>
           <div className='language-padding'>
@@ -343,13 +337,13 @@ class Scene extends Component {
                   <Link to='/story' onClick={this._clearVideoContext}>
                     <FormattedMessage
                       id="general.startOver"
-                      defaultMessage="Começar do início"
+                      defaultMessage="Start from the beginning"
                     />
                   </Link>
                   <Link to={lastPath}>
                     <FormattedMessage
                       id="general.continueReading"
-                      defaultMessage="Continuar assistindo"
+                      defaultMessage="Keep watching"
                     />
                   </Link>
                 </div>
@@ -357,7 +351,7 @@ class Scene extends Component {
                 <Link to="/story">
                   <FormattedMessage
                     id="general.readStory"
-                    defaultMessage="Assistir o vídeo"
+                    defaultMessage="See the video"
                   />
                 </Link>
               )}
