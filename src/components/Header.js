@@ -23,6 +23,7 @@ const Top = styled.div`
     justify-content: space-between;
     background-color: #000;
     .help-box {
+      margin-top: 10px;
       margin-right: 2rem;
       display: flex;
       justify-content: space-between;
@@ -36,20 +37,22 @@ const Top = styled.div`
         max-height: 2vh;
         margin: 0 1rem;
         ${media.phablet`
-        max-height: 15vh;
-        max-width: 18vw;
+        max-height: 5vh;
+        // max-width: 18vw;
+        margin-bottom:10px;
         `}
         ${media.phone`
-          max-height: 19vh;
-          max-width: 22vw;
+          max-height: 3vh;
+          margin-top:10px;
+          // max-width: 22vw;
         `}
         ${media.desktop`
           margin: 0 2rem;
-          max-height: 5vh;
+          max-height: 4vh;
         `}
         ${media.desktopHD`
           margin: 0 2rem;
-          max-height: 7vh;
+          max-height: 4vh;
         `};
       }
     }

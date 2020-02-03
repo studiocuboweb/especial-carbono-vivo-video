@@ -86,35 +86,30 @@ const WrapperHome = styled.section`
 
 const WrapperStory = styled.section`
 
-  // ${media.phone`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
+  ${media.phone`
+    font-size: 0.4em;
+    z-index: 99999;
+  `}
   
-  // ${media.phablet`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
+  ${media.phablet`
+    font-size: 0.4em;
+    z-index: 99999;
+  `}
 
-  // ${media.tablet`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
+  ${media.tablet`
+    font-size: 0.4em;
+    z-index: 99999;
+  `}
 
-  // ${media.desktop`
-  //   position: relative;
-  //   bottom:0;
-  //   left:400px;
-  // `}
+  ${media.desktop`
+  font-size: 0.6em;
+    left:400px;
+  `}
 
-  // ${media.desktopHD`
-  //   position: relative;
-  //   bottom:0;
-  //   left:400px;
-  // `}
+  ${media.desktopHD`
+    font-size: 0.6em;
+    left:400px;
+  `}
 
   .custom-select {
     font-family: "Cinzel";
