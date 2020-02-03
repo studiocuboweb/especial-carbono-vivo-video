@@ -11,6 +11,7 @@ import Landing from "scenes/Landing";
 import Story from "scenes/Story";
 import About from "scenes/About";
 import Share from "scenes/Share";
+import Glossary from "scenes/Glossary";
 
 import "normalize.css";
 import "font-awesome/css/font-awesome.css";
@@ -45,6 +46,7 @@ class Application extends Component {
               <Route path="/story" component={Story} />
               <Route exact path="/about" component={About} />
               <Route exact path="/share" component={Share} />
+              <Route exact path="/glossary" component={Glossary} />
               <Route
                 render={() => (
                   <Helmet>
