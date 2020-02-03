@@ -85,106 +85,83 @@ const WrapperHome = styled.section`
 `;
 
 const WrapperStory = styled.section`
+.custom-select {
+  /* The container must be positioned relative: */
+  position: relative;
+}
 
-  // ${media.phone`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
-  
-  // ${media.phablet`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
 
-  // ${media.tablet`
-  //   position: absolute;
-  //   bottom:10px;
-  //   z-index: 99999;
-  // `}
+.select-selected {
+  font-family: "Cinzel";
+  font-size: 0.5em;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  margin: -1px -1px 0 0;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  width: 165px;
+  text-transform: uppercase;
+}
 
-  // ${media.desktop`
-  //   position: relative;
-  //   bottom:0;
-  //   left:400px;
-  // `}
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
 
-  // ${media.desktopHD`
-  //   position: relative;
-  //   bottom:0;
-  //   left:400px;
-  // `}
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
 
-  .custom-select {
-    font-family: "Cinzel";
-    font-size: 0.6em;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    color: #000;
-    /* The container must be positioned relative: */
-    position: relative;
-  }
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  font-family: "Cinzel";
+  font-size: 0.5em;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  margin: -1px -1px 0 0;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  width: 116px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
-  .custom-select select {
-    display: none; /*hide original SELECT element: */
-  }
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: Grey;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
 
-  .select-selected {
-    background: #fff;
-  }
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
 
-  /* Style the arrow inside the select element: */
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #999 transparent transparent transparent;
-  }
-
-  /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-  }
-
-  /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
-    color: #999;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-  }
-
-  /* Style items (options): */
-  .select-items {
-    display: inline-block;
-    background: #fff;
-    border: 1px solid #fff;
-    text-align: center;
-    margin: -1px -1px 0 0;
-    padding: 0.75rem 1rem;
-    width: 116px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-  }
-
-  /* Hide the items when the select box is closed: */
-  .select-hide {
-    display: none;
-  }
-
-  .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 `;
 
 const languages = [{'id':'en','label':'English'}, {'id':'pt','label':'Português'}, {'id':'es','label':'Español'}];
