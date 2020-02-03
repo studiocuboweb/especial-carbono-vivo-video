@@ -104,11 +104,14 @@ class Header extends Component {
         </div>
         <nav className="help-box">
           <LanguageSelect />
-          <NavLink to="/about" className="color-white" title="Sobre este trabalho">
+          <NavLink to="/about" className="color-white" title="About this">
             <span className="fa fa-info"></span>
           </NavLink>
-          <NavLink to="/share" className="color-white" title="Compartilhe">
+          <NavLink to="/share" className="color-white" title="Share">
             <span className="fa fa-share-alt"></span>
+          </NavLink>
+          <NavLink to="/glossary" className="color-white" title="Glossary">
+            <span className="fa fa-book"></span>
           </NavLink>
         </nav>
       </div>
