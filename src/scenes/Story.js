@@ -109,7 +109,7 @@ const Overlay = styled.div`
   display:block;
   height:100%;
   width:100%;
-  z-index: 9999;
+  z-index: 999999 !important;
 `;
 
 const VideoControlls = styled.div`
