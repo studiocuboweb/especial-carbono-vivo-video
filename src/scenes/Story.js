@@ -438,7 +438,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ youtubeId: 'OjjpZtop43sXXX', subtitleLanguage: language}}
+                    data={{ youtubeId: 'OjjpZtop43s', subtitleLanguage: language}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}

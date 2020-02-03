@@ -21,12 +21,12 @@ const Top = styled.div`
     display: flex;
     padding-top: 1rem;
     justify-content: space-between;
-    // background-color: #000;
+    background-color: #000;
     .help-box {
       margin-right: 2rem;
       display: flex;
       justify-content: space-between;
-      width: 5rem;
+      width: 14rem;
     }
     .partners-logo {
       align-self: end;
@@ -103,13 +103,13 @@ class Header extends Component {
           </a>
         </div>
         <nav className="help-box">
+          <LanguageSelect />
           <NavLink to="/about" className="color-white" title="Sobre este trabalho">
             <span className="fa fa-info"></span>
           </NavLink>
           <NavLink to="/share" className="color-white" title="Compartilhe">
             <span className="fa fa-share-alt"></span>
           </NavLink>
-          <LanguageSelect />
         </nav>
       </div>
     </Top>

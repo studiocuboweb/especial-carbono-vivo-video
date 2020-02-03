@@ -86,35 +86,42 @@ const WrapperHome = styled.section`
 
 const WrapperStory = styled.section`
 
-  ${media.phone`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.phone`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
   
-  ${media.phablet`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.phablet`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
 
-  ${media.tablet`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.tablet`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
 
-  ${media.desktop`
-    position: relative;
-    bottom:0;
-  `}
+  // ${media.desktop`
+  //   position: relative;
+  //   bottom:0;
+  //   left:400px;
+  // `}
 
-  ${media.desktopHD`
-    position: relative;
-    bottom:0;
-  `}
+  // ${media.desktopHD`
+  //   position: relative;
+  //   bottom:0;
+  //   left:400px;
+  // `}
 
   .custom-select {
+    font-family: "Cinzel";
+    font-size: 0.6em;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #000;
     /* The container must be positioned relative: */
     position: relative;
   }
@@ -156,22 +163,14 @@ const WrapperStory = styled.section`
 
   /* Style items (options): */
   .select-items {
-    font-family: "Cinzel";
-    font-size: 0.5em;
-    letter-spacing: 0.1rem;
     display: inline-block;
-    color: #999;
     background: #fff;
     border: 1px solid #fff;
     text-align: center;
     margin: -1px -1px 0 0;
     padding: 0.75rem 1rem;
-    font-weight: 600;
     width: 116px;
-    text-transform: uppercase;
-
     position: absolute;
-  
     top: 100%;
     left: 0;
     right: 0;
