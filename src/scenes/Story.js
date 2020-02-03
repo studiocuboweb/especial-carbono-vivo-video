@@ -15,7 +15,6 @@ import YouTubeVideo from "components/YouTube";
 import Rcslider from "rc-slider";
 
 import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
-import LanguageSelectVideo from "components/LanguageSelectVideo";
 import { FormattedMessage } from "react-intl";
 
 const Wrapper = styled.section`
@@ -291,7 +290,6 @@ const videoChapters = [
 class Scene extends Component {
   constructor(props) {
     super(props);
-    this.LanguageSelectVideoVideo = this.LanguageSelectVideoVideo.bind(this)
   }
 
   state = {
@@ -367,17 +365,10 @@ class Scene extends Component {
   // }
 
   componentDidMount = () => {
-    //document.getElementById('video-player').scrollTo(0,10000);
+    document.getElementById('video-player').scrollTo(0,10000);
     if (typeof window !== 'undefined' ) {
       this.setState({ width: window.innerWidth })
       window.addEventListener('resize', this.handleWindowSizeChange)
-
-      // window.addEventListener("load",this.hideAddressBar());
-      // window.addEventListener("orientationchange",this.hideAddressBar());
-      // window.addEventListener("mousemove",this.onMouseMoveHandler.bind(this))
-      // this.setState({
-      //   width: window.innerWidth,
-      //   height: window.innerHeight })
     }
     setInterval(() => {
       const storedData = localStorage.getItem('elapsed-time')
@@ -420,8 +411,7 @@ class Scene extends Component {
   },5000);
 
   render() {
-    const { chapter, ended, playing, elapsedTime } = this.state;
-    const { width } = this.state;
+    const { chapter, ended, playing, elapsedTime, width } = this.state;
     const isMobile = width <= 470;
     //var youtubeId = 'MNPjmqGQkLc';
     var language = 'en';
@@ -448,7 +438,7 @@ class Scene extends Component {
                     { ...this.state.playing }
                     chapter={chapter}
                     autoplay={!elapsedTime ? true : false}
-                    data={{ youtubeId: 'UwsrzCVZAb8', subtitleLanguage: language}}
+                    data={{ youtubeId: 'OjjpZtop43sXXX', subtitleLanguage: language}}
                     displayVideoEnd={ this._setVideoEnd }
                     preview={false}
                     playing={playing}
@@ -508,22 +498,13 @@ class Scene extends Component {
                   <Link
                     to="#"
                     onClick={() => this._openChaptersMenu()} className="text-chapter">
-                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/></span> 
+                    <span><img src={require("images/chapters_icon.png")} style={{width:'20px'}}/> </span> 
                     <FormattedMessage
                       id="video.chaptersLabel"
                       defaultMessage="chapters"
                     />
                     <span className={this.state.arrowButtonClass}></span>
                   </Link>
-                </div>
-                <div className="subtitle" style={{margin:'0',paddingLeft:'10px',float:'left',display:'block',textAlign:'right'}}>
-                <FormattedMessage
-                  id="video.subtitleLabel"
-                  defaultMessage="subtitle"
-                />:
-                </div>
-                <div style={{margin:'0',float:'left',display:'block',textAlign:'center'}}>
-                    <LanguageSelectVideo id="language_select" onChange={this.LanguageSelectVideoVideo} parentScope={this} />
                 </div>
               </div>
               <div style={{display:'block',float:'left',margin:'0',width:'25%'}}>
@@ -548,32 +529,6 @@ class Scene extends Component {
         </Middle>
       </Wrapper>
     );
-  }
-
-  LanguageSelectVideoVideo(currentLanguage,parentScope) {
-    // console.log(parentScope._video.node.getOption('captions', 'tracklist'));
-    // parentScope._video.node.unloadModule("captions");  //Works for html5 ignored by AS3
-    // parentScope._video.node.unloadModule("cc");  //Works for AS3 ignored by html5
-    parentScope._video.node.setOption("captions", "track", {"languageCode": currentLanguage})  //Works for html5 ignored by AS3
-    parentScope._video.node.setOption("cc", "track", {"languageCode": currentLanguage}) //Works for AS3 ignored by html5
-    // parentScope._video.node.loadModule("captions");  //Works for html5 ignored by AS3
-    // parentScope._video.node.loadModule("cc");  //Works for AS3 ignored by html5
-
-    
-    // console.log('parentScope._video.state.position')
-    // console.log(parentScope._video.state.position)
-    // parentScope._video.setPosition(parentScope._video.state.position)
-    // parentScope.setState({legendVideo: currentLanguage})
-  }
-  _fullScreenVideo = () => {
-    var elem = document.getElementById("video-player");
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    }
   }
 
   _goToChapter = ({ seek }) => {
