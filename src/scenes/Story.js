@@ -109,7 +109,7 @@ const Overlay = styled.div`
   display:block;
   height:100%;
   width:100%;
-  z-index: 9999;
+  z-index: 99999!important;
 `;
 
 const VideoControlls = styled.div`
@@ -427,7 +427,7 @@ class Scene extends Component {
     return (
       <Wrapper className={"scene landing"}>
         <Header />
-        <Overlay onMouseMove={this.onMouseMoveHandler.bind(this)} onClick={() => { this._toggleVideo() }} onTouchEnd={this.onTouchEndHandler.bind(this)} style={this.state.cursor,{zIndex:1}} />
+        <Overlay onMouseMove={this.onMouseMoveHandler.bind(this)} onClick={() => { this._toggleVideo() }} onTouchEnd={this.onTouchEndHandler.bind(this)} style={this.state.cursor} />
         {
           !isMobile &&
             <div className={"video-content "} >
