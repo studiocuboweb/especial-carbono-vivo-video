@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { media, color } from 'styles/utils';
 import { NavLink, Link } from 'react-router-dom';
+import LanguageSelect from "components/LanguageSelect";
 
 import SiteTitle from './SiteTitle';
 
@@ -20,12 +21,12 @@ const Top = styled.div`
     display: flex;
     padding-top: 1rem;
     justify-content: space-between;
-    // background-color: #000;
+    background-color: #000;
     .help-box {
       margin-right: 2rem;
       display: flex;
       justify-content: space-between;
-      width: 5rem;
+      width: 14rem;
     }
     .partners-logo {
       align-self: end;
@@ -102,6 +103,7 @@ class Header extends Component {
           </a>
         </div>
         <nav className="help-box">
+          <LanguageSelect />
           <NavLink to="/about" className="color-white" title="Sobre este trabalho">
             <span className="fa fa-info"></span>
           </NavLink>

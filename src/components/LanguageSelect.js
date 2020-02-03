@@ -86,35 +86,42 @@ const WrapperHome = styled.section`
 
 const WrapperStory = styled.section`
 
-  ${media.phone`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.phone`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
   
-  ${media.phablet`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.phablet`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
 
-  ${media.tablet`
-    position: absolute;
-    bottom:10px;
-    z-index: 99999;
-  `}
+  // ${media.tablet`
+  //   position: absolute;
+  //   bottom:10px;
+  //   z-index: 99999;
+  // `}
 
-  ${media.desktop`
-    position: relative;
-    bottom:0;
-  `}
+  // ${media.desktop`
+  //   position: relative;
+  //   bottom:0;
+  //   left:400px;
+  // `}
 
-  ${media.desktopHD`
-    position: relative;
-    bottom:0;
-  `}
+  // ${media.desktopHD`
+  //   position: relative;
+  //   bottom:0;
+  //   left:400px;
+  // `}
 
   .custom-select {
+    font-family: "Cinzel";
+    font-size: 0.6em;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #000;
     /* The container must be positioned relative: */
     position: relative;
   }
@@ -124,7 +131,6 @@ const WrapperStory = styled.section`
   }
 
   .select-selected {
-    font-size:0.4em;
     background: #fff;
   }
 
@@ -157,24 +163,15 @@ const WrapperStory = styled.section`
 
   /* Style items (options): */
   .select-items {
-    z-index: 9999999999999999999999999999;
-    font-family: "Cinzel";
-    font-size: 0.5em;
-    letter-spacing: 0.1rem;
     display: inline-block;
-    color: #999;
     background: #fff;
     border: 1px solid #fff;
     text-align: center;
     margin: -1px -1px 0 0;
     padding: 0.75rem 1rem;
-    font-weight: 600;
     width: 116px;
-    text-transform: uppercase;
-
     position: absolute;
-  
-    bottom: 100%;
+    top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
@@ -394,7 +391,8 @@ class LanguageSelect extends Component {
                   if (this.location.search('lang='+value)) {
                       _selected=true;
                   }
-                  return <option value={value.id} key={value.id}>{value.label}</option>
+
+                  return <option value={value.id}>{value.label}</option>
               })}
           </select>
         </div>
