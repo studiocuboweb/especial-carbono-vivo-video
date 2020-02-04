@@ -140,20 +140,20 @@ const Top = styled.div`
       max-height: 2vh;
       margin: 0 1rem;
       ${media.phablet`
-        max-height: 15vh;
-        max-width: 18vw;
+        max-height: 10vh;
+        max-width: 13vw;
       `}
       ${media.phone`
-        max-height: 30vh;
-        max-width: 33vw;
+        max-height: 20vh;
+        max-width: 23vw;
       `}
       ${media.desktop`
         margin: 0 2rem;
-        max-height: 15vh;
+        max-height: 5vh;
       `}
       ${media.desktopHD`
         margin: 0 2rem;
-        max-height: 8vh;
+        max-height: 5vh;
       `};
     }
   }

@@ -55,7 +55,7 @@ const Title = styled.h1`
     &.title-3 {
       display: block;
       letter-spacing: -.03em;
-      font-size: 1.6em;
+      font-size: 1.8em;
       font-weight: 700;
       margin-top:55px;
       padding: 0;
@@ -68,7 +68,7 @@ const Title = styled.h1`
         line-height: 1.4;
       `}
       ${media.phablet`
-        font-size: 1.4em;
+        font-size: 1.8em;
         margin-top:45px;
         white-space: normal;
         text-align:center;
