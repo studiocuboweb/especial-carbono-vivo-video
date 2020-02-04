@@ -532,6 +532,17 @@ class Scene extends Component {
     );
   }
 
+  _fullScreenVideo = () => {
+    var elem = document.getElementById("video-player");
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    }
+  } 
+
   _goToChapter = ({ seek }) => {
     this.setState({ chapter: { start: seek }})
   };
@@ -540,6 +551,12 @@ class Scene extends Component {
 
   //_resumeVideo = () => this.setState({ playing: true, startOver:  false })
   _toggleVideo = () => {
+    var iframe = document.getElementById("video-player");
+    // var elmnt = iframe.contentWindow.document.getElementsByClassName("ytp-pause-overlay")[0];
+    //console.log(elmnt)
+    //elmnt.style.display = "none";
+    //console.log(document.getElementsByClassName("ytp-pause-overlayxxx"))
+    //console.log(document.getElementById("video-player").hasClass('ytp-pause-overlay'));
     if (this.state.playing) {
       this._video.node.pauseVideo();
       this.setState({playing: false});
