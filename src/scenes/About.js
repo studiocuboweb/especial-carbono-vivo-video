@@ -121,7 +121,7 @@ const About = ({ intl, lastPath }) => {
               />
             </strong>
             <br />
-            Gustavo Faleiro
+            Gustavo Faleiros
           </Paragraph>
           <Paragraph>
             <strong>
