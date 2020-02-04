@@ -16,6 +16,7 @@ import Rcslider from "rc-slider";
 
 import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
 import { FormattedMessage } from "react-intl";
+import FormattedMessageFixed from "components/blocks/FormattedMessageFixed";
 
 const Wrapper = styled.section`
   position: fixed;
@@ -263,27 +264,22 @@ const Middle = styled.div`
 const videoChapters = [
   {
     seek: 0,
-    name: "Início",
+    name: "video.chpater1",
   },
   {
     // seek: 154,
-    seek: 114,
-    name: "Encontro com invasores",
+    seek: 107,
+    name: "video.chpater2",
   },
   {
     //seek: 554,
-    seek: 314,
-    name: "Dados e mapas",
+    seek: 311,
+    name: "video.chpater3",
   },
   {
     //seek: 700,
-    seek: 420,
-    name: "Preso por invadir",
-  },
-  {
-    // seek: 1030,
-    seek: 630,
-    name: "Quadrilhas",
+    seek: 514,
+    name: "video.chpater4",
   }
 ]
 
@@ -333,7 +329,12 @@ class Scene extends Component {
                   key={`${name}-${seek}`}
                   to="#"
                   onClick={() => this._goToChapter(video)}>
-                  <span>{name}</span>
+                  <span>
+                  <FormattedMessageFixed
+                      id={name}
+                      defaultMessage="chapters"
+                    />
+                  </span>
                 </Link>
               )
             })
