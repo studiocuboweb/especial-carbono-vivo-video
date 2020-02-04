@@ -85,13 +85,15 @@ const Glossary = ({ intl, lastPath }) => {
         <Container>
           <div>
             <Section>
-              <Link to={lastPath} style={{'margin':'20px'}}>
+              <Button>
+              <Link to={lastPath}>
                   <span className="fa fa-arrow-left" />
                   <FormattedMessage
                     id="about.close"
                     defaultMessage="Keep watching"
                   />
               </Link>
+              </Button>
               <h1>
                 <FormattedMessage
                   id="glossary.pageTitle"
@@ -240,13 +242,15 @@ const Glossary = ({ intl, lastPath }) => {
                   </td>
                 </tr>
               </table>
-              <Link to={lastPath} style={{'margin':'20px'}}>
+              <Button>
+              <Link to={lastPath}>
                   <span className="fa fa-arrow-left" />
                   <FormattedMessage
                     id="about.close"
                     defaultMessage="Keep watching"
                   />
               </Link>
+              </Button>
             </Section>
           </div>
         </Container>

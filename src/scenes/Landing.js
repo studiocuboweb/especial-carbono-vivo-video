@@ -309,8 +309,8 @@ class Scene extends Component {
       <Wrapper className="scene landing">
         <Top>
           <div className="partners">
-            <img src={require("images/partners/resistentes.png")} />
             <img src={require("images/partners/infoamazonia.png")} />
+            <img src={require("images/partners/raisg-branco.png")} /> 
           </div>
           <SiteTitle />
           <h3>

@@ -89,10 +89,10 @@ const favicons = new FaviconsWebpackPlugin({
 });
 
 const pwa = new WebpackPwaManifest({
-  name: "Uru-Eu-Wau-Wau: Terra em Disputa",
-  short_name: "Uru-Eu-Wau-Wau: Terra em Disputa",
+  name: "Carbono Vivo",
+  short_name: "Carbono Vivo",
   description:
-    "A terra indígena vive constante ataque de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território ficaram evidentes.",
+    "Indígenas Uru-Eu-Wau-Wau sofrem ataques constantes de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território estão evidentesA terra indígena vive constante ataque de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território ficaram evidentes.",
   background_color: "#fff",
   orientation: "portrait",
   start_url: "/?launcher=true",
