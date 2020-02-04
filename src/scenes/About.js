@@ -101,9 +101,26 @@ const About = ({ intl, lastPath }) => {
             />
           </Paragraph>
           <Paragraph>
-            <strong>
-              <FormattedMessage id="about.organization" defaultMessage="The following organizations are members of RAISG" />
-            </strong>
+            <div style={{float:'left'}}>
+              <strong>
+                <FormattedMessage
+                id="about.organization1"
+                defaultMessage="The following organizations are members of"
+              />
+              </strong>
+            </div>
+            <div style={{float:'left'}}>
+            <a href='https://www.amazoniasocioambiental.org/es/' target='_blank'><img src={require('images/partners/raisg-branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0.1rem 0.5rem 0 0.5rem'}}  /></a>
+            </div>
+            <div style={{float:'left'}}>
+              <strong>
+                <FormattedMessage
+                  id="about.organization2"
+                  defaultMessage=":"
+                />
+              </strong>
+            </div>
+            <div style={{clear:'both'}}></div>
             <p>
             <img src={require('images/partners/ISA_min.png')} title='RAISG' alt='RAISG' style={{'margin':'0 2rem 0 0'}}  align="left" /> <img src={require('images/partners/ecociencia_min.png')} title='Ecociencia' alt='Ecociencia' style={{'margin':0}} align="left"/> <img src={require('images/partners/fan.png')} title='FAN' alt='FAN' style={{'margin':0}} align="left" /> <img src={require('images/partners/Gaia_min_png.png')} title='Gaia' alt='Gaia' style={{'margin':0}} align="left" /> <img src={require('images/partners/IBC_min_png.png')} title='IBC' alt='IBC' style={{'margin':0}} align="left" /> <img src={require('images/partners/Imazon_min_png.png')} title='Imazon' alt='Imazon' style={{'margin':0}} align="left" /> <img src={require('images/partners/provita_min_png.png')} title='Provita' alt='Provita' style={{'margin':0}} align="left"/> <img src={require('images/partners/Wataniba_min_png.png')} title='Wataniba' alt='Wataniba' style={{'margin':0}} /> 
             </p>

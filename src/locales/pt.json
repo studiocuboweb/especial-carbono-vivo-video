@@ -1,7 +1,8 @@
 {
   "about.copy_editors": "Revisão",
   "about.team": "Equipe InfoAmazonia",
-  "about.organization": "Participam da RAISG, as seguintes organizações",
+  "about.organization1": "Participam da ",
+  "about.organization2": " as seguintes organizações",
   "about.dev": "Desenvolvimento",
   "about.coordwebdev": "Coordenação de desenvolvimento web",
   "about.intro": "O vídeo Carbono Vivo é um projeto especial da Rede Amazônica de Informação Socioambiental Georreferenciada (RAISG) em aliança com InfoAmazonia. Seu objetivo é comunicar os resultados do artigo científico “{link}” publicado no dia 27 de janeiro de 2020 no periódico científico Proceedings of the National Academy of Sciences (PNAS). O estudo resulta de uma parceria entre pesquisadores da RAISG, do Centro de Pesquisa Woods Hole Research Center (WHRC), o Environmental Defense (EDF) e a Coordenação das Organizações Indígenas da Bacia Amazônica (COICA).",
