@@ -419,7 +419,11 @@ class Scene extends Component {
     if (this.props.intl.locale.search('es') > -1) {
       //espanhol
       //youtubeId = 'P1RmCycbPHM';
-      language = 'es';
+      if (this.props.intl.locale.search('es-419') > -1) {
+        language = 'es-419';
+      } else {
+        language = 'es';
+      }
     } else if (this.props.intl.locale.search('pt') > -1) {
       //portugues
       //youtubeId = 'PIFcHf99cb8';
@@ -583,7 +587,7 @@ class Scene extends Component {
   }
 
   _pauseVideo = () => {
-    // console.log(this._video.node.getOption('captions', 'tracklist'));
+    console.log(this._video.node.getOption('captions', 'tracklist'));
     this._video.node.pauseVideo();
     this.setState({playing: false});
     //console.log(this.state.playing);

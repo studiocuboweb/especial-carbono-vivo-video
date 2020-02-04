@@ -164,7 +164,7 @@ const WrapperStory = styled.section`
 }
 `;
 
-const languages = [{'id':'en','label':'English'}, {'id':'pt','label':'Português'}, {'id':'es','label':'Español'}];
+const languages = [{'id':'en','label':'English'}, {'id':'pt','label':'Português'}, {'id':'es-419','label':'Espanhol - subtítulos'}, {'id':'es','label':'Español'}];
 
 
 class LanguageSelect extends Component {
@@ -199,6 +199,8 @@ class LanguageSelect extends Component {
             location = '?lang=pt';
         } else if (this.state.language == 'es') {
             location = '?lang=es';
+          } else if (this.state.language == 'es-419') {
+            location = '?lang=es-419';
         } else {
             location = '?lang=en';
         }
@@ -290,7 +292,11 @@ class LanguageSelect extends Component {
           if (this.location.search('lang=pt') > -1) {
             document.getElementsByClassName('select-selected')[0].textContent = 'Português';
           } else if (this.location.search('lang=es') > -1) {
-            document.getElementsByClassName('select-selected')[0].textContent = 'Español';
+            if (this.location.search('lang=es-419') > -1) {
+              document.getElementsByClassName('select-selected')[0].textContent = 'Espanhol - subtítulos';
+            } else {
+              document.getElementsByClassName('select-selected')[0].textContent = 'Español';
+            }
           } else {
             document.getElementsByClassName('select-selected')[0].textContent = 'English';
           }
@@ -298,7 +304,11 @@ class LanguageSelect extends Component {
           if (locationAuto.search('pt') > -1) {
             document.getElementsByClassName('select-selected')[0].textContent = 'Português';
           } else if (locationAuto.search('es') > -1) {
-            document.getElementsByClassName('select-selected')[0].textContent = 'Español';
+            if (locationAuto.search('es-419') > -1) {
+              document.getElementsByClassName('select-selected')[0].textContent = 'Espanhol - subtítulos';
+            } else {
+              document.getElementsByClassName('select-selected')[0].textContent = 'Español';
+            }
           } else {
             document.getElementsByClassName('select-selected')[0].textContent = 'English';
           }        
@@ -338,6 +348,8 @@ class LanguageSelect extends Component {
               choosedLanguage = 'pt';
             } else if (ev.target.textContent == "Español") {
               choosedLanguage = 'es';
+            } else if (ev.target.textContent == "Espanhol - subtítulos") {
+              choosedLanguage = 'es-419';
             }
             //console.log('choosedLanguage')
             //console.log(choosedLanguage)
