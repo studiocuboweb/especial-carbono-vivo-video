@@ -91,7 +91,7 @@ class SiteTitle extends Component {
               <span className="title-item title-3">
                 <FormattedMessage
                   id="general.siteTitle3"
-                  defaultMessage="BR 319: Bem-Vindo à Realidade" />
+                  defaultMessage="Carbono Vivo" />
               </span>
             </span>
           </Link>

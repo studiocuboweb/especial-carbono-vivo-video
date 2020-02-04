@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { media, color } from 'styles/utils';
 import { NavLink, Link } from 'react-router-dom';
 import LanguageSelect from "components/LanguageSelect";
+import { FormattedMessage } from 'react-intl';
 
 import SiteTitle from './SiteTitle';
 
@@ -14,6 +15,27 @@ const Top = styled.div`
   align-items: center;
   justify-content: center;
   z-index:999999999;
+  .title-3 {
+    display: block;
+    letter-spacing: -.03em;
+    font-size: 1.8em;
+    font-weight: 700;
+    padding: 0;
+    ${media.phone`
+      font-size: 1em;
+      white-space: normal;
+      text-align:center;
+      padding:0 16px;
+      line-height: 1.4;
+    `}
+    ${media.phablet`
+      font-size: 1.8em;
+      white-space: normal;
+      text-align:center;
+      padding:0 16px;
+      line-height: 1.4;
+    `}
+  }
   .partners {
     position: fixed;
     top: 0;
@@ -97,10 +119,12 @@ class Header extends Component {
     return (
       <Top>
       <div className="partners">
-        <div className="partners-logo">
-          <a href="//infoamazonia.org/" target="_blank">
-            <img src={require("images/partners/infoamazonia.png")} />
-          </a>
+        <div className="partners-logo title-3">
+          <Link to="/" className='color-white'>
+                <FormattedMessage
+                  id="general.siteTitle3"
+                  defaultMessage="Carbono Vivo" />
+          </Link>
         </div>
         <nav className="help-box">
           <LanguageSelect />
