@@ -66,7 +66,7 @@ const About = ({ intl, lastPath }) => {
                   <span className="fa fa-arrow-left" />
                   <FormattedMessage
                     id="about.close"
-                    defaultMessage="Continuar assistindo"
+                    defaultMessage="Keep watching"
                   />
                 </Link>
             }
@@ -75,11 +75,25 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.intro"
-              defaultMessage="Esta reportagem foi produzida por {infoamazonia} e faz parte do especial “{tierraderesisntente}”."
+              defaultMessage="O vídeo Carbono Vivo é um projeto especial da Rede Amazônica de Informação Socioambiental Georreferenciada (RAISG) em aliança com InfoAmazonia. Seu objetivo é comunicar os resultados do artigo científico “{link}” publicado no dia 27 de janeiro de 2020 no periódico científico Proceedings of the National Academy of Sciences (PNAS). O estudo resulta de uma parceria entre pesquisadores da RAISG, do Centro de Pesquisa Woods Hole Research Center (WHRC), o Environmental Defense (EDF) e a Coordenação das Organizações Indígenas da Bacia Amazônica (COICA).Esta reportagem foi produzida por InfoAmazonia e faz parte do especial “Terra de Resistentes."
               values={{
-                infoamazonia: (
+                link: (
                   <strong>
-                    <a href="http://infoamazonia.org/">InfoAmazonia</a>
+                    <a href="https://www.pnas.org/content/early/2020/01/21/1913321117" target="_blank">The Role of Forest Conversion, Degradation, and Disturbance in the Carbon Dynamics of Amazon Indigenous Territories and Protected Areas</a>
+                  </strong>
+                ),
+                
+              }}
+            />
+          </Paragraph>
+          <Paragraph big>
+            <FormattedMessage
+              id="about.readmore"
+              defaultMessage="Leia mais em reportagem: {readmorelink}"
+              values={{
+                readmorelink: (
+                  <strong>
+                    <a href="https://www.pnas.org/content/early/2020/01/21/1913321117" target="_blank">www.pnas.org/content/early/2020/01/21/1913321117</a>
                   </strong>
                 ),
                 
@@ -88,55 +102,63 @@ const About = ({ intl, lastPath }) => {
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.director" defaultMessage="Reportagem e roteiro" />
+              <FormattedMessage id="about.team" defaultMessage="InfoAmazonia Team" />
             </strong>
-            <br />
-            Gustavo Faleiros
           </Paragraph>
           <Paragraph>
             <strong>
               <FormattedMessage
-                id="about.photos_montage"
-                defaultMessage="Fotografia e montagem"
+                id="about.director"
+                defaultMessage="Direction"
               />
             </strong>
             <br />
-            Fábio Nascimento
+            Gustavo Faleiro
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.coordwebdev" defaultMessage="Coordenação de desenvolvimento web" />
+              <FormattedMessage id="about.edition" defaultMessage="Edition" />
             </strong>
             <br />
-            Stefano Wrobleski (InfoAmazonia)
+            Juliana Mori
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              <FormattedMessage id="about.animation" defaultMessage="Animation" />
+            </strong>
+            <br />
+            Sergio Castro
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              <FormattedMessage id="about.music" defaultMessage="Music" />
+            </strong>
+            <br />
+            Flávio Ianuzzi
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              <FormattedMessage id="about.locution" defaultMessage="Locution" />
+            </strong>
+            <br />
+            Cecília Rosen
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              <FormattedMessage id="about.finalizingImages" defaultMessage=" Finalizing images" />
+            </strong>
+            <br />
+            Luis Ushirobira
           </Paragraph>
           <Paragraph>
             <strong>
               <FormattedMessage
                 id="about.dev"
-                defaultMessage="Desenvolvimento web e design"
+                defaultMessage="Development"
               />
             </strong>
             <br />
-            <a href="https://github.com/studiocuboweb/infoamazonia-por-dentro-da-floresta">Paulo Campos (Studio Cubo Web)</a> e Caio Alcântara, com base no trabalho desenvolvido por <a href="https://github.com/aparabolica/arco-mineiro">Miguel Peixe (aparabólica)</a>
-          </Paragraph>
-          <Paragraph>
-            <strong>
-              <FormattedMessage
-                id="about.maker"
-                defaultMessage="Realização"
-              />
-            </strong>
-            <br />
-            <img
-              src={require("images/partners/infoamazonia.png")}
-              alt="Amazônia Real"
-            />
-            <br />
-            <img
-              src={require("images/partners/resistentes.png")}
-              alt="Tierra de Resistentes"
-            />
+            <a href="https://github.com/studiocuboweb/especial-carbono-vivo-video/" target="_blank">Paulo Campos (Studio Cubo Web)</a>
           </Paragraph>
           <Button>
             <div>
@@ -146,19 +168,12 @@ const About = ({ intl, lastPath }) => {
                     <span className="fa fa-arrow-left" />
                     <FormattedMessage
                       id="about.close"
-                      defaultMessage="Continuar assistindo"
+                      defaultMessage="Keep watching"
                     />
                   </Link>
               }
             </div>
           </Button>
-          <hr />
-          <Paragraph small>
-            <FormattedMessage
-              id="about.license"
-              defaultMessage="Todo o conteúdo publicado neste site está licenciado usando a licença Creative Commons – Atribuição 4.0 Internacional. Para qualquer outro uso, escreva-nos em contact@infoamazonia.or"
-            />
-          </Paragraph>
         </Container>
       </section>
     </Page>
