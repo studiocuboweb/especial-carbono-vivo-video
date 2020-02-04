@@ -4,6 +4,7 @@ import { media, color } from 'styles/utils';
 import { NavLink, Link } from 'react-router-dom';
 import LanguageSelect from "components/LanguageSelect";
 import { FormattedMessage } from 'react-intl';
+import {BrowserView,MobileView,isBrowser,isMobile,isTablet} from "react-device-detect";
 
 import SiteTitle from './SiteTitle';
 
@@ -45,10 +46,10 @@ const Top = styled.div`
     justify-content: space-between;
     background-color: #000;
     .help-box {
-      margin-right: 2rem;
+      margin-right: 3rem;
       display: flex;
       justify-content: space-between;
-      width: 14rem;
+      width: 20rem;
     }
     .partners-logo {
       align-self: end;
@@ -127,6 +128,13 @@ class Header extends Component {
           </Link>
         </div>
         <nav className="help-box">
+        {!isMobile &&
+          <NavLink to="/glossary" className="color-white" title="Glossary">
+            <FormattedMessage
+                  id="glossary.pageTitle"
+                  defaultMessage="Glossary" />
+          </NavLink>
+          }
           <LanguageSelect />
           <NavLink to="/about" className="color-white" title="About this">
             <span className="fa fa-info"></span>
@@ -134,9 +142,11 @@ class Header extends Component {
           <NavLink to="/share" className="color-white" title="Share">
             <span className="fa fa-share-alt"></span>
           </NavLink>
+          {isMobile &&
           <NavLink to="/glossary" className="color-white" title="Glossary">
             <span className="fa fa-book"></span>
           </NavLink>
+          }
         </nav>
       </div>
     </Top>
