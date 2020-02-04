@@ -454,7 +454,14 @@ class Scene extends Component {
             <div className={"video-content "} style={{textAlign:'center'}}>
             {
             !ended &&
-              <p style={{padding:'30px',width:'60%',margin:'0 auto'}}><img src={require("images/phone_landscape.svg")} />Gire o celular na horizontal para ver o vídeo.</p>
+              <p style={{padding:'30px',width:'60%',margin:'0 auto'}}><img src={require("images/phone_landscape.svg")} />
+              
+                  <FormattedMessage
+                      id="video.mobileLandscape"
+                      defaultMessage="chapters"
+                    />
+              
+              </p>
             }
             </div>
         }
