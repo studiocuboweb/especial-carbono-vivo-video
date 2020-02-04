@@ -75,7 +75,7 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.intro"
-              defaultMessage="O vídeo Carbono Vivo é um projeto especial da Rede Amazônica de Informação Socioambiental Georreferenciada (RAISG) em aliança com InfoAmazonia. Seu objetivo é comunicar os resultados do artigo científico “{link}” publicado no dia 27 de janeiro de 2020 no periódico científico Proceedings of the National Academy of Sciences (PNAS). O estudo resulta de uma parceria entre pesquisadores da RAISG, do Centro de Pesquisa Woods Hole Research Center (WHRC), o Environmental Defense (EDF) e a Coordenação das Organizações Indígenas da Bacia Amazônica (COICA).Esta reportagem foi produzida por InfoAmazonia e faz parte do especial “Terra de Resistentes."
+              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network (RAISG) in partnership with InfoAmazonia. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
               values={{
                 link: (
                   <strong>
@@ -89,7 +89,7 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.readmore"
-              defaultMessage="Leia mais em reportagem: {readmorelink}"
+              defaultMessage="Read more in press reports: {readmorelink}"
               values={{
                 readmorelink: (
                   <strong>
@@ -99,6 +99,11 @@ const About = ({ intl, lastPath }) => {
                 
               }}
             />
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              <FormattedMessage id="about.organization" defaultMessage="The following organizations are members of RAISG" />
+            </strong>
           </Paragraph>
           <Paragraph>
             <strong>
@@ -138,14 +143,14 @@ const About = ({ intl, lastPath }) => {
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.locution" defaultMessage="Locution" />
+              <FormattedMessage id="about.locution" defaultMessage="Voiceover" />
             </strong>
             <br />
             Cecília Rosen
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.finalizingImages" defaultMessage=" Finalizing images" />
+              <FormattedMessage id="about.finalizingImages" defaultMessage="Image finalization" />
             </strong>
             <br />
             Luis Ushirobira
