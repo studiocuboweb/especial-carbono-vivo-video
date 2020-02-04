@@ -225,7 +225,8 @@ class YouTubeVideo extends Component {
                 cc_load_policy: 1,
                 cc_lang_pref: data.subtitleLanguage,
                 hl: data.subtitleLanguage,
-                persist_hl:1
+                persist_hl:1,
+                playsinline:1
               },
             }}
             onPlay={this._saveVideoState}
