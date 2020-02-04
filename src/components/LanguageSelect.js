@@ -147,7 +147,7 @@ const WrapperStory = styled.section`
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: Grey;
+  background-color: Black;
   top: 100%;
   left: 0;
   right: 0;
