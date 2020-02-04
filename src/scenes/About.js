@@ -160,6 +160,13 @@ const About = ({ intl, lastPath }) => {
           </Paragraph>
           <Paragraph>
             <strong>
+              <FormattedMessage id="about.photo_credit" defaultMessage="Cover photo credit" />
+            </strong>
+            <br />
+            Giovanni Bello/Rede Xingu
+          </Paragraph>
+          <Paragraph>
+            <strong>
               <FormattedMessage
                 id="about.dev"
                 defaultMessage="Development"
