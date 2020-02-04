@@ -205,9 +205,9 @@ const Top = styled.div`
 `;
 
 const Spacer = styled.div`
-  flex: 1 1 25%;
+  flex: 0 1 2%;
   ${media.phablet`
-    flex: 1 1 6%;
+    flex: 0 1 2%;
   `}
 `;
 
