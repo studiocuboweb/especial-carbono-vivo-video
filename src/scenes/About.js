@@ -20,7 +20,7 @@ const messages = defineMessages({
   },
   siteTitle: {
     id: "head.title",
-    defaultMessage: "Uru-Eu-Wau-Wau: Terra em Disputa"
+    defaultMessage: "Carbono vivo"
   }
 });
 

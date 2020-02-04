@@ -92,7 +92,7 @@ const pwa = new WebpackPwaManifest({
   name: "Carbono Vivo",
   short_name: "Carbono Vivo",
   description:
-    "Indígenas Uru-Eu-Wau-Wau sofrem ataques constantes de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território estão evidentesA terra indígena vive constante ataque de invasores. Com a chegada do governo Bolsonaro, os interesses para a redução do território ficaram evidentes.",
+    "quantidade do elemento carbono que está presente em algum lugar. Por exemplo, o estoque de carbono da floresta amazônica é a quantidade de carbono que está nas plantas, nos animais e nos micro-organismos da floresta.",
   background_color: "#fff",
   orientation: "portrait",
   start_url: "/?launcher=true",

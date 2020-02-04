@@ -7,7 +7,7 @@ import mediaLibrary from './mediaLibrary';
 import { routerReducer } from 'react-router-redux';
 
 const storage = localForage.createInstance({
-  name: 'Uru-Eu-Wau-Wau: Terra em Disputa',
+  name: 'Carbono Vivo',
   description: 'Persistant application state'
 });
 
