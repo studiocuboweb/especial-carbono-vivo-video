@@ -75,14 +75,16 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.intro"
-              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network (RAISG) in partnership with InfoAmazonia. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
+              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network (RAISG) in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
               values={{
                 link: (
                   <strong>
                     <a href="https://www.pnas.org/content/early/2020/01/21/1913321117" target="_blank">The Role of Forest Conversion, Degradation, and Disturbance in the Carbon Dynamics of Amazon Indigenous Territories and Protected Areas</a>
                   </strong>
                 ),
-                
+                InfoAmazoniaLink: (
+                  <a href="https://infoamazonia.org/" target="_blank">InfoAmazonia</a>
+                )
               }}
             />
           </Paragraph>
@@ -127,7 +129,13 @@ const About = ({ intl, lastPath }) => {
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.team" defaultMessage="InfoAmazonia Team" />
+              <FormattedMessage id="about.team" defaultMessage="{InfoAmazoniaLink} Team" 
+              values={{
+                InfoAmazoniaLink: (
+                  <a href="https://infoamazonia.org/" target="_blank">InfoAmazonia</a>
+                )
+              }}
+              />
             </strong>
           </Paragraph>
           <Paragraph>
