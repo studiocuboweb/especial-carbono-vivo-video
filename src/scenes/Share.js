@@ -24,7 +24,7 @@ const messages = defineMessages({
   },
   siteTitle: {
     id: "head.title",
-    defaultMessage: "Documentário “Uru-Eu-Wau-Wau. Terra em Disputa”"
+    defaultMessage: "Carbono Vivo"
   }
 });
 
