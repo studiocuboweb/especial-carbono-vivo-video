@@ -269,6 +269,7 @@ const Middle = styled.div`
     font-weight: 600;
     width: 210px;
     text-transform: uppercase;
+    background-color: rgba(154,205,50, 0.8);
   }
   .language-padding {
     margin-bottom:2.5rem
