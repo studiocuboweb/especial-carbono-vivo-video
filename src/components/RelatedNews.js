@@ -14,6 +14,8 @@ const Wrapper = styled.div`
       }
       .related-content {
         margin-left: .5rem;
+        padding-bottom: 2.5rem;
+        padding-left: 1.5rem;
         h3 {
           color: #fff;
           font-size: .9rem;
@@ -74,18 +76,30 @@ const Wrapper = styled.div`
   }
 `
 
-const RelatedNews = ({ sectionTitle, title, subtitle, imageUrl, href }) => {
+const RelatedNews = ({ sectionTitle, title, href, title1, href1, title2, href2 }) => {
   return (    
     <Wrapper>
       <div className="more-content-header">
         <h3>{sectionTitle}</h3>
       </div>
       <div className="more-content">
-        <a href={href}>
-          <img src={imageUrl} />
+        <a href={href} target="_blank">
           <div className="related-content">
             <h3>{title}</h3>
-            <p align="justify">{ subtitle}</p>
+          </div>
+        </a>
+      </div>
+      <div className="more-content">
+        <a href={href1} target="_blank">
+          <div className="related-content">
+            <h3>{title1}</h3>
+          </div>
+        </a>
+      </div>
+      <div className="more-content">
+        <a href={href2} target="_blank">
+          <div className="related-content">
+            <h3>{title2}</h3>
           </div>
         </a>
       </div>
@@ -95,9 +109,11 @@ const RelatedNews = ({ sectionTitle, title, subtitle, imageUrl, href }) => {
 
 RelatedNews.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
+  title1: PropTypes.string.isRequired,
+  href1: PropTypes.string.isRequired,
+  title2: PropTypes.string.isRequired,
+  href2: PropTypes.string.isRequired,
 };
 
 export default RelatedNews;
