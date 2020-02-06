@@ -43,11 +43,13 @@ const VideoContentEnd = ({ data }) => (
     <div style={divStyle2}>
       <span>{data}</span>
       <RelatedNews className='related-alternative'
-          sectionTitle={"Confira também: "}
-          title={"BR319: Bem Vindo a Realidade"}
-          subtitle={"Uma vila localizada na estrada mais erma do Brasil - a rodovia que liga Porto Velho a Manaus - se torna a nova fronteira para madeireiros de Rondônia. A cada dia novos moradores chegam à Realidade, abrindo novos negócios, em busca de oportunidades na Amazônia." }
-          imageUrl={require("images/related.jpg")}
-          href={"//realidade.amazoniareal.com.br/"}
+          sectionTitle={"Veja também: "}
+          title={"Amazônia na encruzilhada"}
+          href={"//encruzilhada.amazoniasocioambiental.org/"}
+          title1={"Amazônia saqueada"}
+          href1={"//garimpoilegal.amazoniasocioambiental.org/"}
+          title2={"BR319: Bem Vindo a Realidade"}
+          href2={"//realidade.amazoniareal.com.br/"}
         />
         <div className="link-back">
           <Link to="/">
