@@ -12,6 +12,8 @@ import Container from "components/blocks/Container";
 import Paragraph from "components/blocks/Paragraph";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import EndChapterAbout from "components/blocks/EndChapterAbout";
+import RelatedContent from "components/RelatedContent";
 
 const messages = defineMessages({
   title: {
@@ -47,8 +49,19 @@ const Button = styled.div`
   }
 `;
 const About = ({ intl, lastPath }) => {
+
+
   const title = intl.formatMessage(messages.title);
   const siteTitle = intl.formatMessage(messages.siteTitle);
+
+  var locationAuto = intl.locale
+  var readMoreLink ='https://www.amazoniasocioambiental.org/en/radar/new-study-analyses-carbon-stocks-in-the-amazon/'
+  if (locationAuto == 'pt') {
+    readMoreLink ='https://www.amazoniasocioambiental.org/pt-br/radar/novo-estudo-faz-balanco-geral-do-estoque-de-carbono-na-amazonia/'
+  } else if (locationAuto == 'es') {
+    readMoreLink ='https://www.amazoniasocioambiental.org/es/radar/nuevo-estudio-hace-el-balance-de-las-reservas-de-carbono-en-la-amazonia/'
+  } 
+
   return (
     <Page>
       <Helmet>
@@ -75,7 +88,7 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.intro"
-              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network (RAISG) in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense Fund (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
+              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network {RaisgLink} in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense Fund (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
               values={{
                 link: (
                   <strong>
@@ -84,57 +97,51 @@ const About = ({ intl, lastPath }) => {
                 ),
                 InfoAmazoniaLink: (
                   <a href="https://infoamazonia.org/" target="_blank">InfoAmazonia</a>
+                ),
+                RaisgLink: (
+                  <a href="https://amazoniasocioambiental.org/" target="_blank">(RAISG)</a>
                 )
               }}
             />
           </Paragraph>
           <Paragraph big>
+          <a href={readMoreLink} target="_blank">
             <FormattedMessage
               id="about.readmore"
-              defaultMessage="Read more in press reports: {readmorelink}"
-              values={{
-                readmorelink: (
-                  <strong>
-                    <a href="https://www.pnas.org/content/early/2020/01/21/1913321117" target="_blank">www.pnas.org/content/early/2020/01/21/1913321117</a>
-                  </strong>
-                ),
-                
-              }}
+              defaultMessage="Read more in press reports"
             />
+            </a>
           </Paragraph>
           <Paragraph>
-            <div style={{float:'left'}}>
+            <span style={{float:'left'}}>
               <strong>
                 <FormattedMessage
                 id="about.organization1"
                 defaultMessage="The following organizations are members of"
               />
               </strong>
-            </div>
-            <div style={{float:'left'}}>
+            </span>
+            <span style={{float:'left'}}>
             <a href='https://www.amazoniasocioambiental.org/es/' target='_blank'><img src={require('images/partners/raisg-branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0.1rem 0.5rem 0 0.5rem'}}  /></a>
-            </div>
-            <div style={{float:'left'}}>
+            </span>
+            <span style={{float:'left'}}>
               <strong>
                 <FormattedMessage
                   id="about.organization2"
                   defaultMessage=":"
                 />
               </strong>
-            </div>
-            <div style={{clear:'both'}}></div>
-            <p>
+            </span>
+            <span style={{clear:'both'}}></span>
+            <br /><br />
             <img src={require('images/partners/logoISA_branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0 2rem 0 0'}}  align="left" /> <img src={require('images/partners/ecociencia_min.png')} title='Ecociencia' alt='Ecociencia' style={{'margin':0}} align="left"/> <img src={require('images/partners/fan.png')} title='FAN' alt='FAN' style={{'margin':0}} align="left" /> <img src={require('images/partners/LOGO-GAIA-BLANCO-130b.png')} title='Gaia' alt='Gaia' style={{'margin':0}} align="left" /> <img src={require('images/partners/LOGO-ibc.png')} title='IBC' alt='IBC' style={{'margin':0}} align="left" /> <img src={require('images/partners/Imazon_min_png.png')} title='Imazon' alt='Imazon' style={{'margin':0}} align="left" /> <img src={require('images/partners/provita_min_png.png')} title='Provita' alt='Provita' style={{'margin':0}} align="left"/> <img src={require('images/partners/Wataniba_min_png.png')} title='Wataniba' alt='Wataniba' style={{'margin':0}} /> 
-            </p>
+
           </Paragraph>
           <Paragraph>
             <strong>
-              <FormattedMessage id="about.team" defaultMessage="{InfoAmazoniaLink} Team" 
-              values={{
-                InfoAmazoniaLink: (
-                  <a href="https://infoamazonia.org/" target="_blank">InfoAmazonia</a>
-                )
-              }}
+              <FormattedMessage 
+                id="about.team" 
+                defaultMessage="InfoAmazonia Team" 
               />
             </strong>
           </Paragraph>
@@ -144,61 +151,38 @@ const About = ({ intl, lastPath }) => {
                 id="about.director"
                 defaultMessage="Direction"
               />
-            </strong>
+            </strong>Gustavo Faleiros
             <br />
-            Gustavo Faleiros
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.edition" defaultMessage="Edition" />
-            </strong>
+            </strong>Juliana Mori
             <br />
-            Juliana Mori
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.animation" defaultMessage="Animation" />
-            </strong>
+            </strong>Sergio Castro
             <br />
-            Sergio Castro
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.music" defaultMessage="Music" />
-            </strong>
+            </strong>Flávio Ianuzzi
             <br />
-            Flávio Ianuzzi
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.locution" defaultMessage="Voiceover" />
-            </strong>
+            </strong>Cecília Rosen
             <br />
-            Cecília Rosen
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.finalizingImages" defaultMessage="Image finalization" />
-            </strong>
+            </strong>Luis Ushirobira
             <br />
-            Luis Ushirobira
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage id="about.photo_credit" defaultMessage="Cover photo credit" />
-            </strong>
+            </strong>Giovanni Bello/Rede Xingu
             <br />
-            Giovanni Bello/Rede Xingu
-          </Paragraph>
-          <Paragraph>
             <strong>
               <FormattedMessage
                 id="about.dev"
                 defaultMessage="Development"
               />
-            </strong>
-            <br />
-            <a href="https://github.com/studiocuboweb/especial-carbono-vivo-video/" target="_blank">Paulo Campos (Studio Cubo Web)</a>
+            </strong><a href="https://github.com/studiocuboweb/especial-carbono-vivo-video/" target="_blank">Paulo Campos (Studio Cubo Web)</a>
           </Paragraph>
           <Button>
             <div>
@@ -214,6 +198,23 @@ const About = ({ intl, lastPath }) => {
               }
             </div>
           </Button>
+          <Paragraph small>
+            <EndChapterAbout>
+                <strong>
+                  <FormattedMessage id="general.readMore" defaultMessage="Read also" />
+                </strong>
+              <RelatedContent
+                title={
+                  <FormattedMessage
+                  id="about.more"
+                  defaultMessage="Looted Amazon"
+                  /> 
+                    }
+                imageUrl={require("images/about-more.jpg")}
+                href={"https://saqueada.amazoniasocioambiental.org"}
+              />
+            </EndChapterAbout>
+          </Paragraph>
         </Container>
       </section>
     </Page>
@@ -231,4 +232,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+About.propTypes = {
+  intl: intlShape.isRequired
+};
 export default injectIntl(connect(mapStateToProps, null)(About));

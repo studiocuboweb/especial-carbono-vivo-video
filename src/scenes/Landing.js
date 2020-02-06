@@ -40,6 +40,16 @@ const Wrapper = styled.section`
     z-index: -1;
     opacity:0.7;
   }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -1;
+  }
   &.route-transition-enter {
     opacity: 1;
     background-color: transparent;
@@ -326,7 +336,7 @@ class Scene extends Component {
           <p className="description">
             <FormattedMessage
               id="general.tagline"
-              defaultMessage="Indigenous territories and protected areas own 58% of the carbon in the Amazon. But researchers warn degradation advances"
+              defaultMessage="New study analyses carbon stocks in the Amazon. Indigenous territories and protected areas own 58% of all carbon stock. But researchers warn degradation advances."
             />
           </p>
           <div className='language-padding'>
