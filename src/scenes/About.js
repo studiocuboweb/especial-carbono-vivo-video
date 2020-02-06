@@ -60,7 +60,9 @@ const About = ({ intl, lastPath }) => {
     readMoreLink ='https://www.amazoniasocioambiental.org/pt-br/radar/novo-estudo-faz-balanco-geral-do-estoque-de-carbono-na-amazonia/'
   } else if (locationAuto == 'es') {
     readMoreLink ='https://www.amazoniasocioambiental.org/es/radar/nuevo-estudio-hace-el-balance-de-las-reservas-de-carbono-en-la-amazonia/'
-  } 
+  } else if (locationAuto == 'es-419') {
+    readMoreLink ='https://www.amazoniasocioambiental.org/es/radar/nuevo-estudio-hace-el-balance-de-las-reservas-de-carbono-en-la-amazonia/'
+  }
 
   return (
     <Page>
@@ -198,23 +200,6 @@ const About = ({ intl, lastPath }) => {
               }
             </div>
           </Button>
-          <Paragraph small>
-            <EndChapterAbout>
-                <strong>
-                  <FormattedMessage id="general.readMore" defaultMessage="Read also" />
-                </strong>
-              <RelatedContent
-                title={
-                  <FormattedMessage
-                  id="about.more"
-                  defaultMessage="Looted Amazon"
-                  /> 
-                    }
-                imageUrl={require("images/about-more.jpg")}
-                href={"https://saqueada.amazoniasocioambiental.org"}
-              />
-            </EndChapterAbout>
-          </Paragraph>
         </Container>
       </section>
     </Page>
