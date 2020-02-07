@@ -47,7 +47,7 @@ const Wrapper = styled.section`
     left: 0;
     bottom: 0;
     right: 0;
-    // background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.05);
     z-index: -1;
   }
   &.route-transition-enter {
@@ -142,28 +142,36 @@ const Top = styled.div`
     ${media.phablet`
       border-bottom: none;
       margin-bottom: 0rem;
-      padding-bottom: 0rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #fff;
    `}
     img {
       width: auto;
       height: auto;
       max-height: 2vh;
       margin: 0 1rem;
-      ${media.phablet`
+      ${media.tablet`
         &.infoam-logo {
-          max-height: 10vh;
-          max-width: 13vw; 
+          max-width: 15vw;
         }
         &.raisg-logo {
-          max-width: 11vw;    
+          max-width: 15vw;    
+        }
+      `}
+      ${media.phablet`
+        &.infoam-logo {
+          max-height: 14vw;
+        }
+        &.raisg-logo {
+          max-height: 14vw;    
         }
       `}
       ${media.phone`
       &.infoam-logo {
-        max-width: 13vw; 
+        max-height: 8vw;
       }
       &.raisg-logo {
-        max-width: 11vw;    
+        max-height: 10vw;    
       }
       `}
       ${media.desktop`
@@ -184,7 +192,7 @@ const Top = styled.div`
         }
         &.raisg-logo {
           margin: 0 2rem;
-          max-height: 4.5vh;   
+          max-height: 7vh;   
         }
       `};
     }
