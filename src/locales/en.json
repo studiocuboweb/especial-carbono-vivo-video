@@ -1,8 +1,7 @@
 {
   "about.copy_editors": "Revisão",
   "about.team": "InfoAmazonia Team",
-  "about.organization1": "The following organizations are members of ",
-  "about.organization2": ":",
+  "about.organization": "The following organizations are members of RAISG:",
   "about.dev": "Development: ",
   "about.coordwebdev": "Coordenação de desenvolvimento web",
   "about.intro": "The Carbono Vivo video is a special project of the {Raisglink} in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense Fund (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA).",
