@@ -177,11 +177,11 @@ const Top = styled.div`
       ${media.desktopHD`
         &.infoam-logo {
           margin: 0 2rem;
-          max-height: 5vh;
+          max-height: 4vh;
         }
         &.raisg-logo {
           margin: 0 2rem;
-          max-height: 9vh;   
+          max-height: 6vh;   
         }
       `};
     }
