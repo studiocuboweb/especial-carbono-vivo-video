@@ -164,7 +164,7 @@ const WrapperStory = styled.section`
 }
 `;
 
-const languages = [{'id':'en','label':'English'}, {'id':'pt','label':'Português'}, {'id':'es-419','label':'Espanhol - subtítulos'}, {'id':'es','label':'Español'}];
+const languages = [{'id':'en','label':'English'}, {'id':'pt','label':'Português'}, {'id':'es-419','label':'Español - subtítulos'}, {'id':'es','label':'Español'}];
 
 
 class LanguageSelect extends Component {
@@ -293,7 +293,7 @@ class LanguageSelect extends Component {
             document.getElementsByClassName('select-selected')[0].textContent = 'Português';
           } else if (this.location.search('lang=es') > -1) {
             if (this.location.search('lang=es-419') > -1) {
-              document.getElementsByClassName('select-selected')[0].textContent = 'Espanhol - subtítulos';
+              document.getElementsByClassName('select-selected')[0].textContent = 'Español - subtítulos';
             } else {
               document.getElementsByClassName('select-selected')[0].textContent = 'Español';
             }
@@ -305,7 +305,7 @@ class LanguageSelect extends Component {
             document.getElementsByClassName('select-selected')[0].textContent = 'Português';
           } else if (locationAuto.search('es') > -1) {
             if (locationAuto.search('es-419') > -1) {
-              document.getElementsByClassName('select-selected')[0].textContent = 'Espanhol - subtítulos';
+              document.getElementsByClassName('select-selected')[0].textContent = 'Español - subtítulos';
             } else {
               document.getElementsByClassName('select-selected')[0].textContent = 'Español';
             }
@@ -348,7 +348,7 @@ class LanguageSelect extends Component {
               choosedLanguage = 'pt';
             } else if (ev.target.textContent == "Español") {
               choosedLanguage = 'es';
-            } else if (ev.target.textContent == "Espanhol - subtítulos") {
+            } else if (ev.target.textContent == "Español - subtítulos") {
               choosedLanguage = 'es-419';
             }
             //console.log('choosedLanguage')
