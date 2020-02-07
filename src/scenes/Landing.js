@@ -47,7 +47,7 @@ const Wrapper = styled.section`
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.4);
     z-index: -1;
   }
   &.route-transition-enter {
@@ -150,20 +150,39 @@ const Top = styled.div`
       max-height: 2vh;
       margin: 0 1rem;
       ${media.phablet`
-        max-height: 10vh;
-        max-width: 13vw;
+        &.infoam-logo {
+          max-height: 10vh;
+          max-width: 13vw; 
+        }
+        &.raisg-logo {
+          max-height: 10vh;
+          max-width: 13vw;    
+        }
       `}
       ${media.phone`
         max-height: 20vh;
         max-width: 23vw;
       `}
       ${media.desktop`
-        margin: 0 2rem;
-        max-height: 5vh;
+        &.infoam-logo {
+          margin: 0 2rem;
+          max-height: 5vh;
+        }
+        &.raisg-logo {
+          margin: 0 2rem;
+          max-height: 9vh;   
+        }
+
       `}
       ${media.desktopHD`
-        margin: 0 2rem;
-        max-height: 5vh;
+        &.infoam-logo {
+          margin: 0 2rem;
+          max-height: 5vh;
+        }
+        &.raisg-logo {
+          margin: 0 2rem;
+          max-height: 9vh;   
+        }
       `};
     }
   }
@@ -320,8 +339,8 @@ class Scene extends Component {
       <Wrapper className="scene landing">
         <Top>
           <div className="partners">
-            <img src={require("images/partners/infoamazonia.png")} />
-            <img src={require("images/partners/raisg-branco.png")} /> 
+            <img src={require("images/partners/RAISG_BRANCO_frase.png")} className="raisg-logo" /> 
+            <img src={require("images/partners/infoamazonia.png")} className="infoam-logo" />
           </div>
           <SiteTitle />
           <h3>
