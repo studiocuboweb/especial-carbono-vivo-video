@@ -136,51 +136,43 @@ const About = ({ intl, lastPath }) => {
 
           </Paragraph>
           <Paragraph>
-            <strong>
+          <strong>
               <FormattedMessage 
                 id="about.team" 
                 defaultMessage="InfoAmazonia Team" 
               />
             </strong>
-          </Paragraph>
-          <Paragraph>
-            <strong>
+            <br />
               <FormattedMessage
                 id="about.director"
-                defaultMessage="Direction"
-              />
-            </strong>Gustavo Faleiros
+                defaultMessage="Direction - "
+              /> Gustavo Faleiros
+              <br />
+              <FormattedMessage id="about.edition" defaultMessage="Edition - " />
+              Juliana Mori
+              <br />
+              <FormattedMessage id="about.animation" defaultMessage="Animation - " />
+              Sergio Castro
             <br />
-            <strong>
-              <FormattedMessage id="about.edition" defaultMessage="Edition" />
-            </strong>Juliana Mori
+              <FormattedMessage id="about.music" defaultMessage="Music - " />
+              Flávio Ianuzzi
             <br />
-            <strong>
-              <FormattedMessage id="about.animation" defaultMessage="Animation" />
-            </strong>Sergio Castro
+              <FormattedMessage id="about.locution" defaultMessage="Voiceover - " />
+              Cecília Rosen
             <br />
-            <strong>
-              <FormattedMessage id="about.music" defaultMessage="Music" />
-            </strong>Flávio Ianuzzi
-            <br />
-            <strong>
-              <FormattedMessage id="about.locution" defaultMessage="Voiceover" />
-            </strong>Cecília Rosen
-            <br />
-            <strong>
-              <FormattedMessage id="about.finalizingImages" defaultMessage="Image finalization" />
-            </strong>Luis Ushirobira
-            <br />
-            <strong>
-              <FormattedMessage id="about.photo_credit" defaultMessage="Cover photo credit" />
-            </strong>Giovanni Bello/Rede Xingu
-            <br />
-            <strong>
+              <FormattedMessage id="about.finalizingImages" defaultMessage="Image finalization - " />
+              Luis Ushirobira
+            <br />  
               <FormattedMessage
                 id="about.dev"
                 defaultMessage="Development"
               />
-            </strong><a href="https://github.com/studiocuboweb/especial-carbono-vivo-video/" target="_blank">Paulo Campos (Studio Cubo Web)</a>
+             <a href="https://github.com/studiocuboweb/especial-carbono-vivo-video/" target="_blank">Paulo Campos (Studio Cubo Web)</a>
+            <br /><br />
+              <strong>
+              <FormattedMessage id="about.photo_credit" defaultMessage="Cover photo - " />
+              </strong>
+              Giovanni Bello/Rede Xingu
           </Paragraph>
           <Button>
             <div>
