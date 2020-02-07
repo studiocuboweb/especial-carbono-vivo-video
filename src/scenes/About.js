@@ -56,12 +56,20 @@ const About = ({ intl, lastPath }) => {
 
   var locationAuto = intl.locale
   var readMoreLink ='https://www.amazoniasocioambiental.org/en/radar/new-study-analyses-carbon-stocks-in-the-amazon/'
+  var raisgLinkLabel = 'Amazon Geo-Referenced Socio-Environmental Information Network (RAISG)'
+  var raisgLink = 'https://www.amazoniasocioambiental.org/en/'
   if (locationAuto == 'pt') {
     readMoreLink ='https://www.amazoniasocioambiental.org/pt-br/radar/novo-estudo-faz-balanco-geral-do-estoque-de-carbono-na-amazonia/'
+    raisgLinkLabel = 'Rede Amazônica de Informação Socioambiental Georreferenciada (RAISG)'
+    raisgLink = 'https://www.amazoniasocioambiental.org/pt-br/'
   } else if (locationAuto == 'es') {
+    raisgLinkLabel = 'Red Amazónica de Información Socioambiental Georreferenciada (RAISG)'
     readMoreLink ='https://www.amazoniasocioambiental.org/es/radar/nuevo-estudio-hace-el-balance-de-las-reservas-de-carbono-en-la-amazonia/'
+    raisgLink = 'https://www.amazoniasocioambiental.org/es/'
   } else if (locationAuto == 'es-419') {
+    raisgLinkLabel = 'Red Amazónica de Información Socioambiental Georreferenciada (RAISG)'
     readMoreLink ='https://www.amazoniasocioambiental.org/es/radar/nuevo-estudio-hace-el-balance-de-las-reservas-de-carbono-en-la-amazonia/'
+    raisgLink = 'https://www.amazoniasocioambiental.org/es/'
   }
 
   return (
@@ -90,7 +98,7 @@ const About = ({ intl, lastPath }) => {
           <Paragraph big>
             <FormattedMessage
               id="about.intro"
-              defaultMessage="The Carbono Vivo video is a special project of the Amazon Georeferenced Social and Environmental Information Network {RaisgLink} in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense Fund (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
+              defaultMessage="The Carbono Vivo video is a special project of the {RaisgLink} in partnership with {InfoAmazoniaLink}. Its objective is to communicate the results of the scientific article “{link}” published on January 27, 2020 in the journal Scientific Proceedings of the National Academy of Sciences (PNAS). The study results from a partnership between RAISG, the Woods Hole Research Center (WHRC), Environmental Defense Fund (EDF) and the Coordination of Indigenous Organizations in the Amazon Basin (COICA)."
               values={{
                 link: (
                   <strong>
@@ -101,7 +109,7 @@ const About = ({ intl, lastPath }) => {
                   <a href="https://infoamazonia.org/" target="_blank">InfoAmazonia</a>
                 ),
                 RaisgLink: (
-                  <a href="https://amazoniasocioambiental.org/" target="_blank">(RAISG)</a>
+                  <a href={raisgLink} target="_blank">{raisgLinkLabel}</a>
                 )
               }}
             />
