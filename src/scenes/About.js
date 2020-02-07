@@ -132,9 +132,9 @@ const About = ({ intl, lastPath }) => {
               </strong>
             </span>
             <span style={{float:'left'}}>
-            <a href='https://www.amazoniasocioambiental.org/es/' target='_blank'><img src={require('images/partners/raisg-branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0.1rem 0.5rem 0 0.5rem'}}  /></a>
+            <a href='https://www.amazoniasocioambiental.org/es/' target='_blank'><img src={require('images/partners/raisg-branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0rem 0.5rem 0 0.5rem'}}  /></a>
             </span>
-            <span style={{float:'left'}}>
+            <span>
               <strong>
                 <FormattedMessage
                   id="about.organization2"
@@ -142,7 +142,7 @@ const About = ({ intl, lastPath }) => {
                 />
               </strong>
             </span>
-            <span style={{clear:'both'}}></span>
+            <span style={{'display':'block',clear:'both'}}></span>
             <br /><br />
             <img src={require('images/partners/logoISA_branco.png')} title='RAISG' alt='RAISG' style={{'margin':'0 2rem 0 0'}}  align="left" /> <img src={require('images/partners/ecociencia_min.png')} title='Ecociencia' alt='Ecociencia' style={{'margin':0}} align="left"/> <img src={require('images/partners/fan.png')} title='FAN' alt='FAN' style={{'margin':0}} align="left" /> <img src={require('images/partners/LOGO-GAIA-BLANCO-130b.png')} title='Gaia' alt='Gaia' style={{'margin':0}} align="left" /> <img src={require('images/partners/LOGO-ibc.png')} title='IBC' alt='IBC' style={{'margin':0}} align="left" /> <img src={require('images/partners/Imazon_min_png.png')} title='Imazon' alt='Imazon' style={{'margin':0}} align="left" /> <img src={require('images/partners/provita_min_png.png')} title='Provita' alt='Provita' style={{'margin':0}} align="left"/> <img src={require('images/partners/Wataniba_min_png.png')} title='Wataniba' alt='Wataniba' style={{'margin':0}} /> 
 
