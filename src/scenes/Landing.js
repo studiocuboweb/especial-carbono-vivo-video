@@ -47,7 +47,7 @@ const Wrapper = styled.section`
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.4);
+    // background-color: rgba(0,0,0,0.4);
     z-index: -1;
   }
   &.route-transition-enter {
@@ -155,13 +155,16 @@ const Top = styled.div`
           max-width: 13vw; 
         }
         &.raisg-logo {
-          max-height: 10vh;
-          max-width: 13vw;    
+          max-width: 11vw;    
         }
       `}
       ${media.phone`
-        max-height: 20vh;
-        max-width: 23vw;
+      &.infoam-logo {
+        max-width: 13vw; 
+      }
+      &.raisg-logo {
+        max-width: 11vw;    
+      }
       `}
       ${media.desktop`
         &.infoam-logo {
@@ -181,7 +184,7 @@ const Top = styled.div`
         }
         &.raisg-logo {
           margin: 0 2rem;
-          max-height: 6vh;   
+          max-height: 4.5vh;   
         }
       `};
     }
